@@ -8,13 +8,21 @@ public enum LogLevels
 public static class QDebugManager
 {
     [Header("Categories")]
-    public static LogLevels detector = LogLevels.Verbose;
+    public static LogLevels detector = LogLevels.Trace;
+    public static LogLevels gameManager = LogLevels.Trace;
 
     private static LogLevels ComponentLogLevel(Component component)
     {
-        if (component.GetType() == typeof(Detector))
+        System.Type componentType = component.GetType();
+
+        if (componentType == typeof(Detector))
         {
             return detector;
+        }
+
+        if (componentType == typeof(GameManager))
+        {
+            return gameManager;
         }
 
         Debug.LogWarning("QDebugManager could not find the loglevel of " + component.name);

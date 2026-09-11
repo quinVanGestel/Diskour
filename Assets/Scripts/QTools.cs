@@ -168,18 +168,21 @@ public static class QTools
         return false;
     }
 
-    public static bool AnyComponentMatches(Component[] primaryComponents, Component[] secondaryComponents)
+    public static bool AnyMonoBehaviourMatches(Component[] primaryArray, Component[] secondaryArray)
     {
-        foreach (Component primaryComponent in primaryComponents)
+        foreach (Component primaryItem in primaryArray)
         {
-            foreach (Component secondaryComponent in secondaryComponents)
+            foreach (Component secondaryItem in secondaryArray)
             {
-                if (primaryComponent.GetType() == secondaryComponent.GetType())
+                // Debug.Log("Comparing " + primaryItem.name + " against " + secondaryItem.name);
+                if (primaryItem.GetType() == secondaryItem.GetType())
                 {
+                    Debug.Log(primaryItem.name + " equals " + secondaryItem.name);
                     return true;
                 }
             }
         }
+        // Debug.Log("None of the components match.");
         return false;
     }
 

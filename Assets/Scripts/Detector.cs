@@ -14,9 +14,8 @@ public class Detector : MonoBehaviour
     public string[] namesAllowed;
     public string[] namesBanned;
 
-    public Component[] componentsAllowed;
-    public Component[] componentsBanned;
-
+    public Component[] monoBehaviourWhitelist;
+    public Component[] monoBehaviourBlacklist;
 
     [Header("Then")]
     public UnityEvent[] actions;
@@ -87,13 +86,15 @@ public class Detector : MonoBehaviour
             return false;
         }
 
-        if (!QTools.AnyComponentMatches(otherGameObject.GetComponents(typeof(Component)), componentsAllowed))
+        QDebugManager.Trace(this, monoBehaviourWhitelist[0].name);
+        if (monoBehaviourWhitelist.Length != 0 && !QTools.AnyMonoBehaviourMatches(otherGameObject.GetComponents<Component>(), monoBehaviourWhitelist))
         {
             QDebugManager.Mild(this, "Rejected " + otherGameObject.name + ", none of its components are explicitly allowed..");
             return false;
         }
 
-        if (QTools.AnyComponentMatches(otherGameObject.GetComponents(typeof(Component)), componentsBanned))
+        QDebugManager.Trace(this, monoBehaviourBlacklist[0].name);
+        if (monoBehaviourBlacklist.Length != 0 && QTools.AnyMonoBehaviourMatches(otherGameObject.GetComponents<Component>(), monoBehaviourBlacklist))
         {
             QDebugManager.Mild(this, "Rejected " + otherGameObject.name + ", one of its components is banned.");
             return false;
