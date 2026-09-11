@@ -8,52 +8,99 @@ public class Detector : MonoBehaviour
     public bool collisionEnter;
 
     [Header("If")]
-    public string[] otherTags;
-    public string[] otherNames;
-    public Component[] otherClass;
+    public string[] tagsAllowed;
+    public string[] tagsBanned;
+
+    public string[] namesAllowed;
+    public string[] namesBanned;
+
+    public Component[] componentsAllowed;
+    public Component[] componentsBanned;
+
 
     [Header("Then")]
-    public UnityEvent action;
+    public UnityEvent[] actions;
+
+    private void InvokeAllActions()
+    {
+        foreach (UnityEvent action in actions)
+        {
+            action.Invoke();
+        }
+        QDebugManager.Mild(this, "Invoked all actions.");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+        QDebugManager.Mild(this, other.name + " entered the trigger of " + name);
+
         if (!triggerEnter)
         {
+            QDebugManager.Mild(this, "Rejected " + other.name + ", ontriggerenter is disabled.");
             return;
         }
 
-        bool tagMatches;
-        foreach (string otherTag in otherTags)
+        if (GameObjectPassesFilter(other.gameObject))
         {
-            if (other.CompareTag(otherTag))
-            {
-                tagMatches = true;
-            }
-        }
-
-        bool nameMatches;
-        if (otherNames.Length == 0)
-        {
-            nameMatches = true;
-        }
-        else
-        {
-            foreach (string otherName in otherNames)
-            {
-                if (other.name == otherName)
-                {
-                    nameMatches = true;
-                }
-            }
+            InvokeAllActions();
         }
 
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        QDebugManager.Mild(this, collision.gameObject.name + " entered the collider of " + name);
 
+        if (!collisionEnter)
+        {
+            QDebugManager.Mild(this, "Rejected " + collision.gameObject.name + ", oncollisionenter is disabled.");
+            return;
+        }
+        if (GameObjectPassesFilter(collision.gameObject))
+        {
+            InvokeAllActions();
+        }
     }
 
+    private bool GameObjectPassesFilter(GameObject otherGameObject)
+    {
+        if (tagsAllowed.Length != 0 && !QTools.AnyStringMatches(new string[] { otherGameObject.tag }, tagsAllowed))
+        {
+            QDebugManager.Mild(this, "Rejected " + otherGameObject.name + ", its tag is not explicitly allowed.");
+            return false;
+        }
+
+        if (tagsBanned.Length != 0 && QTools.AnyStringMatches(new string[] { otherGameObject.tag }, tagsBanned))
+        {
+            QDebugManager.Mild(this, "Rejected " + otherGameObject.name + ", its tag is banned.");
+        }
+
+        if (namesAllowed.Length != 0 && !QTools.AnyStringMatches(new string[] { otherGameObject.name }, namesAllowed))
+        {
+            QDebugManager.Mild(this, "Rejected " + otherGameObject.name + ", its name is not explicitly allowed.");
+            return false;
+        }
+
+        if (namesBanned.Length != 0 && QTools.AnyStringMatches(new string[] { otherGameObject.name }, namesBanned))
+        {
+            QDebugManager.Mild(this, "Rejected " + otherGameObject.name + ", its name is banned.");
+            return false;
+        }
+
+        if (!QTools.AnyComponentMatches(otherGameObject.GetComponents(typeof(Component)), componentsAllowed))
+        {
+            QDebugManager.Mild(this, "Rejected " + otherGameObject.name + ", none of its components are explicitly allowed..");
+            return false;
+        }
+
+        if (QTools.AnyComponentMatches(otherGameObject.GetComponents(typeof(Component)), componentsBanned))
+        {
+            QDebugManager.Mild(this, "Rejected " + otherGameObject.name + ", one of its components is banned.");
+            return false;
+        }
+
+        return true;
+    }
 
 
 
