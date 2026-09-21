@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+
     private void Awake()
     {
         SingletonSetup();
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
     public void ExitEntered()
     {
         QDebugManager.Mild(this, "Exit entered");
+        QSceneManager.instance.EndScene();
     }
+
 
 }
