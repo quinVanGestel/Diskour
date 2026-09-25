@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
+
+
 public class Player : Entity
 {
     [SerializeField] private InputActionReference moveAction;
@@ -12,10 +14,11 @@ public class Player : Entity
     private Vector2 moveInput;
     private CharacterController characterController;
     [SerializeField] private Camera playerCamera;
+    private VerticalState verticalState = VerticalState.Grounded;
     // private float totalVerticalForce;
-    private float dragAppliedLastFrame;
-    private float gravityAppliedLastFrame;
-    private float gravityAcceleration = 9.81f;
+    // private float dragAppliedLastFrame;
+    // private float gravityAppliedLastFrame;
+    // private float gravityAcceleration = 9.81f;
 
     private void Awake()
     {
@@ -44,11 +47,32 @@ public class Player : Entity
         UpdatePlayerRotation();
     }
 
-    private float IncrementGravity()
+    private VerticalState CalculateVerticalState()
     {
+        // calculate vertical state 😀👍
 
-        return -1;
+        return VerticalState.Grounded;
     }
+
+    private void Meow()
+    {
+        Debug.Log(" mrrrp :3c");
+    }
+
+    // private float IncrementGravity()
+    // {
+    //     startGravitySpeed
+    //     return -1;
+    // }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            verticalState = Verti
+        }
+    }
+
+
 
     // private Vector2 Camera2dForward()
     // {
