@@ -6254,7 +6254,7 @@ PrefabInstance:
       objectReference: {fileID: 1610069207}
     - target: {fileID: 1900381234635510434, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
       propertyPath: m_VersionIndex
-      value: 925
+      value: 928
       objectReference: {fileID: 0}
     - target: {fileID: 3171188011746407523, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
       propertyPath: m_Mesh
@@ -6267,6 +6267,10 @@ PrefabInstance:
     - target: {fileID: 3499443616233880326, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
       propertyPath: speed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499443616233880326, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
+      propertyPath: gravity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3499443616233880326, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
       propertyPath: playerCamera
