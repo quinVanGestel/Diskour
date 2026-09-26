@@ -1,20 +1,40 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
+public enum EVerticalState
+{
+    Falling = 0, Grounded, Jumping
+}
 
-
-public class Player : Entity
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private InputActionReference moveAction;
+    [SerializeField] private InputActionReference jumpAction;
     [SerializeField] private InputActionReference updateRotationAction;
     [Tooltip("on false the player will rotate when held, on true it will activate when not held")]
     public bool invertUpdateRotationAction;
-
+    private EVerticalState currentVerticalState;
+    public EVerticalState CurrentVerticalState
+    {
+        get { return currentVerticalState; }
+        set
+        {
+            if (currentVerticalState == value)
+            {
+                return;
+            }
+            currentVerticalState = value;
+            if (debugLog) Debug.Log("CurrentVerticalState was set to \n" + value.ToString());
+        }
+    }
+    public Rigidbody rigidBody;
+    [Tooltip("Meters per second")]
+    public float speed;
     private Vector2 moveInput;
-    private CharacterController characterController;
     [SerializeField] private Camera playerCamera;
-    private VerticalState verticalState = VerticalState.Grounded;
+    public bool jumping;
+    public bool debugLog;
+
     // private float totalVerticalForce;
     // private float dragAppliedLastFrame;
     // private float gravityAppliedLastFrame;
@@ -23,15 +43,16 @@ public class Player : Entity
     private void Awake()
     {
         Debug.Log("Running the awake function");
-        characterController = gameObject.GetComponent<CharacterController>();
-        if (characterController == null)
-        {
-            if (debugLog) Debug.Log("Failed to fetch character controller");
-        }
+        // characterController = gameObject.GetComponent<CharacterController>();
+        // if (characterController == null)
+        // {
+        //     if (debugLog) Debug.Log("Failed to fetch character controller");
+        // }
         if (moveAction == null)
         {
             Debug.Log("move action null");
         }
+
     }
 
     private void FixedUpdate()
@@ -40,18 +61,41 @@ public class Player : Entity
         if (moveAction.action.IsPressed())
             HandlePlayerMovement();
 
+
     }
 
     private void Update()
     {
         UpdatePlayerRotation();
+        if (moveAction.action.WasPerformedThisFrame())
+        {
+            if (debugLog) Debug.Log("Player triggered jump");
+            if (CurrentVerticalState == EVerticalState.Grounded)
+                Jump();
+        }
     }
 
-    private VerticalState CalculateVerticalState()
+    public void GroundDetected()
+    {
+// stub
+    }
+
+    private void Jump()
+    {
+
+    }
+
+    // public bool AbleToJump()
+    //     {
+
+    //     }
+
+
+    private EVerticalState CalculateVerticalState()
     {
         // calculate vertical state 😀👍
 
-        return VerticalState.Grounded;
+        return EVerticalState.Grounded;
     }
 
     private void Meow()
@@ -64,13 +108,6 @@ public class Player : Entity
     //     startGravitySpeed
     //     return -1;
     // }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            verticalState = Verti
-        }
-    }
 
 
 
@@ -91,7 +128,7 @@ public class Player : Entity
         || (invertUpdateRotationAction && updateRotationAction.action.IsPressed()))    // or if the button needs to be released but the button is held
             return;
         // InputAction rotateActionAction = updateRotationAction.action;
-        Debug.Log("IsPressed: \n" + updateRotationAction.action.IsPressed());
+        // Debug.Log("IsPressed: \n" + updateRotationAction.action.IsPressed());
         // Debug.Log("WasPressedThisFrame: \n" + rotateActionAction.WasPressedThisFrame());
         // Debug.Log("WasPressedThisDynamicUpdate: \n" + rotateActionAction.WasPressedThisDynamicUpdate());
         // Debug.Log("WasPerformedThisFrame: \n" + rotateActionAction.WasPerformedThisFrame());
@@ -126,7 +163,13 @@ public class Player : Entity
         Vector3 moveDirection = new(speedAdjustedMoveInput.x, 0, speedAdjustedMoveInput.y);
 
         // Debug.Log("movedirection: " + moveDirection);
-        characterController.Move(moveDirection);
-    }
 
+        Vector3 currentPosition = transform.position;
+        Vector3 newPosition = currentPosition + moveDirection;
+        transform.position = newPosition;
+        // Debug.Log("currentPosition: " + currentPosition);
+        // Debug.Log("newPosition: " + newPosition);
+
+        // characterController.Move(moveDirection);
+    }
 }

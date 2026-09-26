@@ -15,7 +15,7 @@ public static class QDebugManager
     {
         System.Type componentType = component.GetType();
 
-        if (componentType == typeof(Detector))
+        if (componentType == typeof(ColliderDetector))
         {
             return detector;
         }
@@ -24,6 +24,10 @@ public static class QDebugManager
         {
             return gameManager;
         }
+
+        if (componentType == typeof(RayCastDetector))
+            return LogLevels.Trace;
+
 
         Debug.LogWarning("QDebugManager could not find the loglevel of " + component.name);
         return LogLevels.None;
