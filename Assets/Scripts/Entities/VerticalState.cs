@@ -19,7 +19,7 @@ public class VerticalState : MonoBehaviour
             foreach (Detector groundDetector in groundDetectors)
             {
                 groundDetector.gameObject.SetActive(groundDetection);
-                QDebugManager.Instance.Verbose(this, "SetActive " + groundDetector.name + " is now " + groundDetection.ToString());
+                QDebugManager.Instance.Trace(this, "SetActive " + groundDetector.name + " is now " + groundDetection.ToString());
             }
         }
     }
@@ -32,14 +32,15 @@ public class VerticalState : MonoBehaviour
     {
         get
         {
-            if (rigidBody.linearVelocity.y >= 0.1f)
+            float upwardVelocity = rigidBody.linearVelocity.y;
+            if (upwardVelocity >= 0.1f)
                 return EVerticalState.Jumping;
 
-            if (rigidBody.linearVelocity.y <= -0.1f)
+            if (upwardVelocity <= -0.1f)
                 return EVerticalState.Falling;
 
-            if (rigidBody.linearVelocity.y == 0f && currentVerticalState != EVerticalState.Grounded)   // beware! At the peak of the jump, before falling, the player will be considered to be floating. 
-                return EVerticalState.Floating;
+            if (upwardVelocity >= -0.1f && upwardVelocity <= 0.1f && currentVerticalState != EVerticalState.Grounded)
+                return EVerticalState.Floating;     // beware! At the peak of the jump, before falling, the player will be considered to be floating. 
 
             return EVerticalState.Grounded;
         }
@@ -54,10 +55,26 @@ public class VerticalState : MonoBehaviour
         }
     }
 
+    [Header("Debug")]
+    private EVerticalState previousVerticalState;
+
     private void Awake()
     {
         if (groundDetectorsParent != null && groundDetectors.Length == 0)
             groundDetectors = groundDetectorsParent.GetComponentsInChildren<Detector>();
+    }
+
+    private void Update()
+    {
+        if (previousVerticalState != CurrentVerticalState)
+        {
+            QDebugManager.Instance.Mild(this, "Current vertical state: " + CurrentVerticalState);
+            previousVerticalState = CurrentVerticalState;
+        }
+        if (!GroundDetection && CurrentVerticalState != EVerticalState.Grounded)
+        {
+            GroundDetection = true;
+        }
     }
 
     public void GroundDetected()

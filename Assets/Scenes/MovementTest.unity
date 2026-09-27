@@ -16347,7 +16347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QDebugManager
   typeLogLevels:
   - component: {fileID: 399609427}
-    logLevel: 3
+    logLevel: 2
   - component: {fileID: 1287136381}
     logLevel: 3
   - component: {fileID: 1302718740}
@@ -16355,7 +16355,7 @@ MonoBehaviour:
   - component: {fileID: 1641751042}
     logLevel: 3
   - component: {fileID: 1641751049}
-    logLevel: 5
+    logLevel: 4
 --- !u!1 &1303417887
 GameObject:
   m_ObjectHideFlags: 0

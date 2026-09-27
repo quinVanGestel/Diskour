@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public bool debugLog;
 
-    private void Awake()
+    private void Start()
     {
         QDebugManager.Instance.Verbose(this, "Running the awake function");
         if (moveAction == null)
@@ -44,16 +44,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        QDebugManager.Instance.Trace(this, "Current vertical state: " + verticalState.CurrentVerticalState);
-        if (!verticalState.GroundDetection && verticalState.CurrentVerticalState != EVerticalState.Grounded)
-        {
-            verticalState.GroundDetection = true;
-        }
-
         UpdatePlayerRotation();
-        if (jumpAction.action.WasPerformedThisFrame())
+        QDebugManager.Instance.Trace(this, "pressed: " + jumpAction.action.IsPressed());
+        if (jumpAction.action.IsPressed())
         {
-            if (debugLog) Debug.Log("Player triggered jump");
             if (AbleToJump())
                 Jump();
         }
@@ -61,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        Debug.Log("Jumping");
+        QDebugManager.Instance.Mild(this, "Jumping");
         rigidBody.AddForce(0f, jumpForce * 100f, 0f); // for some reason this thing needs some real high numbers to do anything interesting, so to compensate I * 100f
         verticalState.CurrentVerticalState = EVerticalState.Jumping;
         verticalState.GroundDetection = true;
