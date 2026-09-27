@@ -5,6 +5,10 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
+    public static GameManager Instance
+    {
+        get { return instance; }
+    }
 
 
     private void Awake()
@@ -24,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void ExitEntered()
     {
-        QDebugManager.Mild(this, "Exit entered");
+        QDebugManager.Instance.Mild(this, "Exit entered");
         QSceneManager.instance.EndScene();
     }
 

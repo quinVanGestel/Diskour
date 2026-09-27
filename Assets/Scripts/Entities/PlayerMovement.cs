@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public enum EVerticalState
 {
-    Falling = 0, Grounded, Jumping
+    Falling = 0, Grounded, Jumping, Floating
 }
 
 public class PlayerMovement : MonoBehaviour
@@ -13,10 +13,45 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference updateRotationAction;
     [Tooltip("on false the player will rotate when held, on true it will activate when not held")]
     public bool invertUpdateRotationAction;
-    private EVerticalState currentVerticalState;
+    EVerticalState currentVerticalState;
+
+    public Detector[] groundDetectors;
+
+    private bool groundDetection;
+    public bool GroundDetection
+    {
+        get { return groundDetection; }
+        set
+        {
+            groundDetection = value;
+            foreach (Detector groundDetector in groundDetectors)
+            {
+                groundDetector.gameObject.SetActive(groundDetection);
+                Debug.Log("Set " + groundDetector.name + " to " + groundDetection.ToString());
+            }
+        }
+    }
+
+
+
+    /// <summary>
+    /// Setting is only needed when setting it to grounded, the getter can handle the rest intrinsically.
+    /// </summary>
     public EVerticalState CurrentVerticalState
     {
-        get { return currentVerticalState; }
+        get
+        {
+            if (rigidBody.linearVelocity.y >= 0.1f)
+                return EVerticalState.Jumping;
+
+            if (rigidBody.linearVelocity.y <= -0.1f)
+                return EVerticalState.Falling;
+
+            if (rigidBody.linearVelocity.y == 0f && currentVerticalState != EVerticalState.Grounded)   // beware! At the peak of the jump, before falling, the player will be considered to be floating. 
+                return EVerticalState.Floating;
+
+            return EVerticalState.Grounded;
+        }
         set
         {
             if (currentVerticalState == value)
@@ -33,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     [SerializeField] private Camera playerCamera;
     public bool jumping;
+    public float jumpForce;
     public bool debugLog;
 
     // private float totalVerticalForce;
@@ -66,36 +102,48 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        QDebugManager.Instance.Trace(this, "Current vertical state: " + CurrentVerticalState);
+        if (!GroundDetection && CurrentVerticalState != EVerticalState.Grounded)
+        {
+            GroundDetection = true;
+        }
+
+
         UpdatePlayerRotation();
-        if (moveAction.action.WasPerformedThisFrame())
+        if (jumpAction.action.WasPerformedThisFrame())
         {
             if (debugLog) Debug.Log("Player triggered jump");
-            if (CurrentVerticalState == EVerticalState.Grounded)
+            if (AbleToJump())
                 Jump();
         }
     }
 
     public void GroundDetected()
     {
-// stub
+        if (CurrentVerticalState != EVerticalState.Jumping)
+            CurrentVerticalState = EVerticalState.Grounded;
+        GroundDetection = false;
     }
 
-    private void Jump()
-    {
 
+    public void Jump()
+    {
+        Debug.Log("Jumping");
+        rigidBody.AddForce(0f, jumpForce * 100f, 0f); // for some reason this thing needs some real high numbers to do anything interesting, so to compensate I * 100f
+        CurrentVerticalState = EVerticalState.Jumping;
+        GroundDetection = true;
     }
 
-    // public bool AbleToJump()
-    //     {
-
-    //     }
-
-
-    private EVerticalState CalculateVerticalState()
+    public bool AbleToJump()
     {
-        // calculate vertical state 😀👍
+        if (CurrentVerticalState != EVerticalState.Grounded)
+        {
+            return false;
+        }
 
-        return EVerticalState.Grounded;
+
+
+        return true;
     }
 
     private void Meow()
@@ -108,7 +156,6 @@ public class PlayerMovement : MonoBehaviour
     //     startGravitySpeed
     //     return -1;
     // }
-
 
 
     // private Vector2 Camera2dForward()
