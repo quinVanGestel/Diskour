@@ -1,4 +1,10 @@
+using System;
 using UnityEngine;
+
+public enum EVerticalState
+{
+    Falling = 0, Grounded, Jumping, Floating
+}
 
 public class VerticalState : MonoBehaviour
 {
@@ -24,6 +30,10 @@ public class VerticalState : MonoBehaviour
         }
     }
 
+
+    [Tooltip("How high a rigidbody's velocity can be before it is no longer considered floating.")]
+    public float floatingTolerance;
+
     private EVerticalState currentVerticalState;
     /// <summary>
     /// Setting is only needed when setting it to grounded, the getter can handle the rest intrinsically.
@@ -33,13 +43,13 @@ public class VerticalState : MonoBehaviour
         get
         {
             float upwardVelocity = rigidBody.linearVelocity.y;
-            if (upwardVelocity >= 0.1f)
+            if (upwardVelocity >= floatingTolerance)
                 return EVerticalState.Jumping;
 
-            if (upwardVelocity <= -0.1f)
+            if (upwardVelocity <= -floatingTolerance)
                 return EVerticalState.Falling;
 
-            if (upwardVelocity >= -0.1f && upwardVelocity <= 0.1f && currentVerticalState != EVerticalState.Grounded)
+            if (upwardVelocity >= -floatingTolerance && upwardVelocity <= floatingTolerance && currentVerticalState != EVerticalState.Grounded)
                 return EVerticalState.Floating;     // beware! At the peak of the jump, before falling, the player will be considered to be floating. 
 
             return EVerticalState.Grounded;

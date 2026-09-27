@@ -1,45 +1,32 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public enum EVerticalState
-{
-    Falling = 0, Grounded, Jumping, Floating
-}
+
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public VerticalState verticalState;
+    public Rigidbody rigidBody;
+    public Camera playerCamera;
+
     [SerializeField] private InputActionReference moveAction;
     [SerializeField] private InputActionReference jumpAction;
     [SerializeField] private InputActionReference updateRotationAction;
     [Tooltip("on false the player will rotate when held, on true it will activate when not held")]
     public bool invertUpdateRotationAction;
-    public VerticalState verticalState;
-    public Rigidbody rigidBody;
+
     [Tooltip("Meters per second")]
     public float speed;
-    private Vector2 moveInput;
-    [SerializeField] private Camera playerCamera;
-    public bool jumping;
     public float jumpForce;
-    public bool debugLog;
 
-    private void Start()
-    {
-        QDebugManager.Instance.Verbose(this, "Running the awake function");
-        if (moveAction == null)
-        {
-            Debug.Log("move action null");
-        }
-
-    }
+    private Vector2 moveInput;
 
     private void FixedUpdate()
     {
         QDebugManager.Instance.Trace(this, "pressed: " + moveAction.action.IsPressed());
         if (moveAction.action.IsPressed())
             HandlePlayerMovement();
-
-
     }
 
     private void Update()
@@ -64,16 +51,13 @@ public class PlayerMovement : MonoBehaviour
     public bool AbleToJump()
     {
         if (verticalState.CurrentVerticalState != EVerticalState.Grounded)
-        {
             return false;
-        }
 
         return true;
     }
 
     private void UpdatePlayerRotation()
     {
-
         if ((!invertUpdateRotationAction && !updateRotationAction.action.IsPressed())    // If the button needs to be held but the button is not held
         || (invertUpdateRotationAction && updateRotationAction.action.IsPressed()))    // or if the button needs to be released but the button is held
             return;
@@ -106,4 +90,5 @@ public class PlayerMovement : MonoBehaviour
 
         transform.position = newPosition;
     }
+
 }
