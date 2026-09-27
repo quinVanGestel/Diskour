@@ -5,6 +5,9 @@ public class VerticalState : MonoBehaviour
 
     public Rigidbody rigidBody;
 
+    [Tooltip("Pick one of the two :)")]
+    public GameObject groundDetectorsParent;
+    [Tooltip("Pick one of the two :)")]
     public Detector[] groundDetectors;
     private bool groundDetection;
     public bool GroundDetection
@@ -49,6 +52,12 @@ public class VerticalState : MonoBehaviour
             currentVerticalState = value;
             QDebugManager.Instance.Mild(this, "CurrentVerticalState was set to " + value.ToString());
         }
+    }
+
+    private void Awake()
+    {
+        if (groundDetectorsParent != null && groundDetectors.Length == 0)
+            groundDetectors = groundDetectorsParent.GetComponentsInChildren<Detector>();
     }
 
     public void GroundDetected()
