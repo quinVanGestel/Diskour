@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    // [SerializeField] protected float mass;
 
     public bool debugLog;
 

@@ -13,55 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference updateRotationAction;
     [Tooltip("on false the player will rotate when held, on true it will activate when not held")]
     public bool invertUpdateRotationAction;
-    EVerticalState currentVerticalState;
-
-    public Detector[] groundDetectors;
-
-    private bool groundDetection;
-    public bool GroundDetection
-    {
-        get { return groundDetection; }
-        set
-        {
-            groundDetection = value;
-            foreach (Detector groundDetector in groundDetectors)
-            {
-                groundDetector.gameObject.SetActive(groundDetection);
-                Debug.Log("Set " + groundDetector.name + " to " + groundDetection.ToString());
-            }
-        }
-    }
-
-
-
-    /// <summary>
-    /// Setting is only needed when setting it to grounded, the getter can handle the rest intrinsically.
-    /// </summary>
-    public EVerticalState CurrentVerticalState
-    {
-        get
-        {
-            if (rigidBody.linearVelocity.y >= 0.1f)
-                return EVerticalState.Jumping;
-
-            if (rigidBody.linearVelocity.y <= -0.1f)
-                return EVerticalState.Falling;
-
-            if (rigidBody.linearVelocity.y == 0f && currentVerticalState != EVerticalState.Grounded)   // beware! At the peak of the jump, before falling, the player will be considered to be floating. 
-                return EVerticalState.Floating;
-
-            return EVerticalState.Grounded;
-        }
-        set
-        {
-            if (currentVerticalState == value)
-            {
-                return;
-            }
-            currentVerticalState = value;
-            if (debugLog) Debug.Log("CurrentVerticalState was set to \n" + value.ToString());
-        }
-    }
+    public VerticalState verticalState;
     public Rigidbody rigidBody;
     [Tooltip("Meters per second")]
     public float speed;
@@ -71,19 +23,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public bool debugLog;
 
-    // private float totalVerticalForce;
-    // private float dragAppliedLastFrame;
-    // private float gravityAppliedLastFrame;
-    // private float gravityAcceleration = 9.81f;
-
     private void Awake()
     {
-        Debug.Log("Running the awake function");
-        // characterController = gameObject.GetComponent<CharacterController>();
-        // if (characterController == null)
-        // {
-        //     if (debugLog) Debug.Log("Failed to fetch character controller");
-        // }
+        QDebugManager.Instance.Verbose(this, "Running the awake function");
         if (moveAction == null)
         {
             Debug.Log("move action null");
@@ -93,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Debug.Log("pressed " + moveAction.action.IsPressed());
+        QDebugManager.Instance.Trace(this, "pressed: " + moveAction.action.IsPressed());
         if (moveAction.action.IsPressed())
             HandlePlayerMovement();
 
@@ -102,12 +44,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        QDebugManager.Instance.Trace(this, "Current vertical state: " + CurrentVerticalState);
-        if (!GroundDetection && CurrentVerticalState != EVerticalState.Grounded)
+        QDebugManager.Instance.Trace(this, "Current vertical state: " + verticalState.CurrentVerticalState);
+        if (!verticalState.GroundDetection && verticalState.CurrentVerticalState != EVerticalState.Grounded)
         {
-            GroundDetection = true;
+            verticalState.GroundDetection = true;
         }
-
 
         UpdatePlayerRotation();
         if (jumpAction.action.WasPerformedThisFrame())
@@ -118,55 +59,23 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void GroundDetected()
-    {
-        if (CurrentVerticalState != EVerticalState.Jumping)
-            CurrentVerticalState = EVerticalState.Grounded;
-        GroundDetection = false;
-    }
-
-
     public void Jump()
     {
         Debug.Log("Jumping");
         rigidBody.AddForce(0f, jumpForce * 100f, 0f); // for some reason this thing needs some real high numbers to do anything interesting, so to compensate I * 100f
-        CurrentVerticalState = EVerticalState.Jumping;
-        GroundDetection = true;
+        verticalState.CurrentVerticalState = EVerticalState.Jumping;
+        verticalState.GroundDetection = true;
     }
 
     public bool AbleToJump()
     {
-        if (CurrentVerticalState != EVerticalState.Grounded)
+        if (verticalState.CurrentVerticalState != EVerticalState.Grounded)
         {
             return false;
         }
 
-
-
         return true;
     }
-
-    private void Meow()
-    {
-        Debug.Log(" mrrrp :3c");
-    }
-
-    // private float IncrementGravity()
-    // {
-    //     startGravitySpeed
-    //     return -1;
-    // }
-
-
-    // private Vector2 Camera2dForward()
-    // {
-    //     return new(playerCamera.transform.forward.x, playerCamera.transform.forward.z);
-    // }
-
-    // private Vector2 Camera2dRight()
-    // {
-    //     return new(playerCamera.transform.right.x, playerCamera.transform.right.z);
-    // }
 
     private void UpdatePlayerRotation()
     {
@@ -174,16 +83,7 @@ public class PlayerMovement : MonoBehaviour
         if ((!invertUpdateRotationAction && !updateRotationAction.action.IsPressed())    // If the button needs to be held but the button is not held
         || (invertUpdateRotationAction && updateRotationAction.action.IsPressed()))    // or if the button needs to be released but the button is held
             return;
-        // InputAction rotateActionAction = updateRotationAction.action;
-        // Debug.Log("IsPressed: \n" + updateRotationAction.action.IsPressed());
-        // Debug.Log("WasPressedThisFrame: \n" + rotateActionAction.WasPressedThisFrame());
-        // Debug.Log("WasPressedThisDynamicUpdate: \n" + rotateActionAction.WasPressedThisDynamicUpdate());
-        // Debug.Log("WasPerformedThisFrame: \n" + rotateActionAction.WasPerformedThisFrame());
-        // Debug.Log("WasPerformedThisDynamicUpdate: \n" + rotateActionAction.WasPerformedThisDynamicUpdate());
-        // Debug.Log("WasReleasedThisFrame: \n" + rotateActionAction.WasReleasedThisFrame());
-        // Debug.Log("WasReleasedThisDynamicUpdate: \n" + rotateActionAction.WasReleasedThisDynamicUpdate());
-        // Debug.Log("WasCompletedThisFrame: \n" + rotateActionAction.WasCompletedThisFrame());
-        // Debug.Log("WasCompletedThisDynamicUpdate: \n" + rotateActionAction.WasCompletedThisDynamicUpdate());
+
         transform.rotation = Quaternion.Euler(transform.rotation.x, playerCamera.transform.rotation.eulerAngles.y, transform.rotation.z);
     }
 
@@ -191,32 +91,25 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInput = moveAction.action.ReadValue<Vector2>();
 
-        // Quaternion compensatedRotation = playerCamera.transform.rotation *
-        //   gameObject.transform.rotation;
-        // Debug.Log("compensatedRotation: " + compensatedRotation);
-
-        // Debug.Log("moveinput: " + moveInput);
-        // Vector2 camera2d = new(playerCamera.transform.localEulerAngles.x, playerCamera.transform.localEulerAngles.y);
-        // Debug.Log("camera2d: " + camera2d);
-
-        // Debug.Log("camera2dforward: " + Camera2dForward());
-        // Vector3 vector3RightNormalised = new(transform.right.x, transform.right.z);
         Vector2 vector2Right = new(transform.right.x, transform.right.z);
+        QDebugManager.Instance.Trace(this, "vector2Right: " + vector2Right);
         Vector2 vector2Forward = new(transform.forward.x, transform.forward.z);
-        Vector2 compensatedMoveInput = moveInput.x * vector2Right.normalized + moveInput.y * vector2Forward.normalized;
-        Vector2 speedAdjustedMoveInput = compensatedMoveInput.normalized * (Time.fixedDeltaTime * speed);
-        // Debug.Log("speedAdjustedMoveInput: " + speedAdjustedMoveInput);
-        // Debug.Log("compensatedMoveInput: " + compensatedMoveInput);
+        QDebugManager.Instance.Trace(this, "vector2Forward: " + vector2Forward);
+
+        Vector2 directionAdjustedMoveInput = moveInput.x * vector2Right.normalized + moveInput.y * vector2Forward.normalized;
+        QDebugManager.Instance.Trace(this, "directionAdjustedMoveInput: " + directionAdjustedMoveInput);
+
+        Vector2 speedAdjustedMoveInput = directionAdjustedMoveInput.normalized * (Time.fixedDeltaTime * speed);
+        QDebugManager.Instance.Trace(this, "speedAdjustedMoveInput: " + speedAdjustedMoveInput);
+
         Vector3 moveDirection = new(speedAdjustedMoveInput.x, 0, speedAdjustedMoveInput.y);
-
-        // Debug.Log("movedirection: " + moveDirection);
-
+        QDebugManager.Instance.Trace(this, "movedirection: " + moveDirection);
         Vector3 currentPosition = transform.position;
-        Vector3 newPosition = currentPosition + moveDirection;
-        transform.position = newPosition;
-        // Debug.Log("currentPosition: " + currentPosition);
-        // Debug.Log("newPosition: " + newPosition);
+        QDebugManager.Instance.Trace(this, "currentPosition: " + currentPosition);
 
-        // characterController.Move(moveDirection);
+        Vector3 newPosition = currentPosition + moveDirection;
+        QDebugManager.Instance.Trace(this, "newPosition: " + newPosition);
+
+        transform.position = newPosition;
     }
 }
