@@ -51,7 +51,7 @@ public abstract class Detector : MonoBehaviour
     /// </summary>
     protected void LogCheck()
     {
-        QDebugManager.Instance.Verbose(this, "detector " + gameObject.name + " ran a check");
+        QDebugManager.Instance.Trace(this, "detector " + gameObject.name + " ran a check");
         timeSinceLastCheck = 0f;
         targetDetectedLastCheck = false;
     }
@@ -68,6 +68,7 @@ public abstract class Detector : MonoBehaviour
         if (tagsBanned.Length != 0 && QTools.AnyStringMatches(new string[] { otherGameObject.tag }, tagsBanned))
         {
             QDebugManager.Instance.Verbose(this, "Rejected " + otherGameObject.name + ", its tag is banned.");
+            return false;
         }
 
         if (namesAllowed.Length != 0 && !QTools.AnyStringMatches(new string[] { otherGameObject.name }, namesAllowed))

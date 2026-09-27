@@ -23,7 +23,7 @@ public class RayCastDetector : Detector
 
         if (Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance, targetLayers, queryTriggerInteraction))
         {
-            if (debug) Debug.Log("Ray " + gameObject.name + " hit " + hitInfo.collider.gameObject.name);
+            QDebugManager.Instance.Mild(this, "hit " + hitInfo.collider.gameObject.name);
             GameObjectDetected(hitInfo.collider.gameObject);
         }
     }
