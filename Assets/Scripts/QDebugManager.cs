@@ -6,16 +6,26 @@ public enum ELogLevels
     None, Severe, Important, Mild, Verbose, Trace
 }
 
-[Serializable]
-public class TypeLogLevel
-{
-    [Tooltip("Any one of that type will do! Which specific game object you get it from should not matter at all.")]
-    public MonoBehaviour component;
-    public ELogLevels logLevel;
-}
 
 public class QDebugManager : MonoBehaviour
 {
+
+
+    [Serializable]
+    public class TypeLogLevel
+    {
+        [Tooltip("Any one of that type will do! Which specific game object you get it from should not matter at all.")]
+        public MonoBehaviour component;
+        public ELogLevels logLevel;
+    }
+
+    [Serializable]
+    public class DebugVisualisation
+    {
+        public Material material;
+        public bool enabled;
+        public MeshRenderer[] meshRenderers;
+    }
 
     private static QDebugManager instance;
     public static QDebugManager Instance
@@ -25,9 +35,39 @@ public class QDebugManager : MonoBehaviour
 
     public TypeLogLevel[] typeLogLevels;
 
+    public DebugVisualisation[] debugVisualisations;
+
     private void Awake()
     {
         SingletonSetup();
+    }
+
+    private void Start()
+    {
+        foreach (DebugVisualisation debugVisualisation in debugVisualisations)
+        {
+            debugVisualisation.meshRenderers = QTools.GetAllMeshRenderers(debugVisualisation.material);
+    //  QDebugManager.Instance.Trace(this, "");
+        }
+    }
+
+    private void Update()
+    {
+        VisualisationRoutine();
+    }
+
+
+
+    private async void VisualisationRoutine()
+    {
+        foreach (DebugVisualisation debugVisualisation in debugVisualisations)
+        {
+            if (debugVisualisation.enabled)
+                foreach (MeshRenderer meshRenderer in debugVisualisation.meshRenderers)
+                {
+                    meshRenderer.enabled = debugVisualisation.enabled;
+                }
+        }
     }
 
     private ELogLevels ComponentLogLevel(Component component)

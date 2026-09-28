@@ -25,11 +25,30 @@ public abstract class Detector : MonoBehaviour
     /// </summary>
     public float timeSinceLastCheck;
 
+    /// <summary>
+    /// Will increase when disabled, will decrease when enabled. Set to 0 on a DetectionEnabled state change.
+    /// </summary>
+    public float timeSinceDisabled;
+
+    private bool detectionEnabled;
+    public bool DetectionEnabled
+    {
+        get { return detectionEnabled; }
+        set
+        {
+            detectionEnabled = value;
+            timeSinceDisabled = 0f;
+            QDebugManager.Instance.Verbose(this, "detectionEnabled set to " + value);
+        }
+    }
+
     private void Update()
     {
         timeSinceLastCheck += Time.deltaTime;
-    }
 
+        if (!DetectionEnabled) timeSinceDisabled += Time.deltaTime;
+        else timeSinceDisabled -= Time.deltaTime;
+    }
 
     public void InvokeAllActions()
     {

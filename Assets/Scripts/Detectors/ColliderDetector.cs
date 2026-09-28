@@ -10,6 +10,9 @@ public class ColliderDetector : Detector
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!DetectionEnabled)
+            return;
+
         QDebugManager.Instance.Mild(this, other.name + " entered the trigger of " + name);
 
         if (!triggerEnter)
@@ -24,6 +27,9 @@ public class ColliderDetector : Detector
 
     private void OnTriggerStay(Collider other)
     {
+        if (!DetectionEnabled)
+            return;
+
         QDebugManager.Instance.Mild(this, other.name + " is still the trigger of " + name);
 
         if (!triggerEnter)
@@ -38,6 +44,9 @@ public class ColliderDetector : Detector
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!DetectionEnabled)
+            return;
+
         QDebugManager.Instance.Mild(this, collision.gameObject.name + " entered the collider of " + name);
 
         if (!collisionEnter)
@@ -52,6 +61,9 @@ public class ColliderDetector : Detector
 
     private void OnCollisionStay(Collision collision)
     {
+        if (!DetectionEnabled)
+            return;
+            
         QDebugManager.Instance.Mild(this, collision.gameObject.name + " is still in the collider of " + name);
 
         if (!collisionEnter)

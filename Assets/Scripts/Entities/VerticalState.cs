@@ -24,8 +24,8 @@ public class VerticalState : MonoBehaviour
             groundDetection = value;
             foreach (Detector groundDetector in groundDetectors)
             {
-                groundDetector.gameObject.SetActive(groundDetection);
-                QDebugManager.Instance.Trace(this, "SetActive " + groundDetector.name + " is now " + groundDetection.ToString());
+                groundDetector.DetectionEnabled = groundDetection;
+                QDebugManager.Instance.Trace(this, "DetectionEnabled is now " + groundDetection.ToString());
             }
         }
     }
@@ -64,25 +64,32 @@ public class VerticalState : MonoBehaviour
             groundDetectors = groundDetectorsParent.GetComponentsInChildren<Detector>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         CurrentVerticalState = CalculateVerticalState();
         if (previousVerticalState != CurrentVerticalState)
         {
-            QDebugManager.Instance.Mild(this, "Current vertical state: " + CurrentVerticalState);
+            QDebugManager.Instance.Verbose(this, "Current vertical state: " + CurrentVerticalState);
             previousVerticalState = CurrentVerticalState;
         }
-        if (!GroundDetection && CurrentVerticalState != EVerticalState.Grounded)
-        {
-            GroundDetection = true;
-        }
+
+        groundDetection = (CurrentVerticalState != EVerticalState.Grounded);
     }
 
     private EVerticalState CalculateVerticalState()
     {
+        foreach (Detector groundDetector in groundDetectors)
+        {
+            // bool timeSinceLastCheckIsOutdated = groundDetector.timeSinceDisabled > groundDetector.timeSinceLastCheck;
+
+
+            if (groundDetector.targetDetectedLastCheck && (groundDetector.timeSinceLastCheck <= Time.fixedDeltaTime) && CurrentVerticalState != EVerticalState.Jumping)
+                return EVerticalState.Grounded;
+        }
+
         float upwardVelocity = rigidBody.linearVelocity.y;
-        if (upwardVelocity >= floatingTolerance)
-            return EVerticalState.Jumping;
+        // if (upwardVelocity >= floatingTolerance)
+        //     return EVerticalState.Jumping;
 
         if (upwardVelocity <= -floatingTolerance)
             return EVerticalState.Falling;
@@ -90,14 +97,11 @@ public class VerticalState : MonoBehaviour
         if (upwardVelocity >= -floatingTolerance && upwardVelocity <= floatingTolerance && currentVerticalState != EVerticalState.Grounded)
             return EVerticalState.Floating;     // beware! At the peak of the jump, before falling, the player will be considered to be floating. 
 
-        return EVerticalState.Grounded;
+        return CurrentVerticalState;
     }
 
     public void GroundDetected()
     {
-        if (CurrentVerticalState == EVerticalState.Jumping)
-            return;
-        CurrentVerticalState = EVerticalState.Grounded;
         GroundDetection = false;
     }
 

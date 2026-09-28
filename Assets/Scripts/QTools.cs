@@ -186,5 +186,24 @@ public static class QTools
         return false;
     }
 
+    /// <returns>All the mesh renderers in the hierarchy that have this material.</returns>
+    public static MeshRenderer[] GetAllMeshRenderers(Material material)
+    {
+        MeshRenderer[] allMeshRenderers = GameObject.FindObjectsByType<MeshRenderer>();
+        List<MeshRenderer> requestedMeshRenderers = new();
+        foreach (MeshRenderer meshRenderer in allMeshRenderers)
+        {
+            foreach (Material meshRendererMaterial in meshRenderer.materials)
+            {
+                if (meshRendererMaterial == material)
+                {
+                    requestedMeshRenderers.Add(meshRenderer);
+                    break;
+                }
+            }
+        }
+        return requestedMeshRenderers.ToArray();
+    }
+
 }
 

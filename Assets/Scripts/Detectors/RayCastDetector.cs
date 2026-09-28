@@ -11,7 +11,7 @@ public class RayCastDetector : Detector
 
     private void Update()
     {
-        SendRay();
+        if (DetectionEnabled) SendRay();
     }
 
     private void SendRay()
@@ -23,7 +23,7 @@ public class RayCastDetector : Detector
 
         if (Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance, targetLayers, queryTriggerInteraction))
         {
-            QDebugManager.Instance.Mild(this, "hit " + hitInfo.collider.gameObject.name);
+            QDebugManager.Instance.Verbose(this, "hit " + hitInfo.collider.gameObject.name);
             GameObjectDetected(hitInfo.collider.gameObject);
         }
     }

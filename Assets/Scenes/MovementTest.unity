@@ -425,6 +425,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -705,6 +706,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -951,6 +953,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -1085,6 +1088,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -5508,6 +5512,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -5642,6 +5647,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -5776,6 +5782,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -5910,6 +5917,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -6044,6 +6052,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -6290,6 +6299,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -6424,6 +6434,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -6558,6 +6569,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -6766,6 +6778,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -6900,6 +6913,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -7034,6 +7048,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -7168,6 +7183,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -7302,6 +7318,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -7548,6 +7565,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -7868,6 +7886,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -8002,6 +8021,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -8136,6 +8156,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -8382,6 +8403,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -8516,6 +8538,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -8829,6 +8852,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -8963,6 +8987,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -9097,6 +9122,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -9231,6 +9257,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -10569,6 +10596,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -10703,6 +10731,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -10837,6 +10866,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -11083,6 +11113,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -11217,6 +11248,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -11351,6 +11383,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -11944,6 +11977,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -12078,6 +12112,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -12212,6 +12247,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -12473,6 +12509,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -12607,6 +12644,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -12741,6 +12779,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -12987,6 +13026,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -13233,6 +13273,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -13479,6 +13520,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -13613,6 +13655,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -13958,6 +14001,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -14092,6 +14136,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -14629,6 +14674,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -14763,6 +14809,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -15067,6 +15114,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -15201,6 +15249,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -15519,6 +15568,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -15653,6 +15703,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -15903,6 +15954,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -16037,6 +16089,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -16183,6 +16236,7 @@ MonoBehaviour:
       m_Calls: []
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   triggerEnter: 1
   collisionEnter: 0
 --- !u!1 &1299560184
@@ -16510,7 +16564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QDebugManager
   typeLogLevels:
   - component: {fileID: 399609427}
-    logLevel: 4
+    logLevel: 3
   - component: {fileID: 1287136381}
     logLevel: 3
   - component: {fileID: 1302718740}
@@ -16519,6 +16573,16 @@ MonoBehaviour:
     logLevel: 3
   - component: {fileID: 1641751049}
     logLevel: 3
+  debugVisualisations:
+  - material: {fileID: 2100000, guid: 0240668e502957848ba7a9dc07c3cee8, type: 2}
+    enabled: 0
+    meshRenderers: []
+  - material: {fileID: 2100000, guid: 87fb59d36cb113b419f5c536a3c14ab9, type: 2}
+    enabled: 0
+    meshRenderers: []
+  - material: {fileID: 2100000, guid: 1137d14b862cdae48bdedc9c0b1dd3d7, type: 2}
+    enabled: 0
+    meshRenderers: []
 --- !u!1 &1303417887
 GameObject:
   m_ObjectHideFlags: 0
@@ -16646,6 +16710,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -16813,6 +16878,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -16947,6 +17013,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -17081,6 +17148,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -17215,6 +17283,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -17573,6 +17642,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -17886,6 +17956,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -18020,6 +18091,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -18266,6 +18338,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -18512,6 +18585,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -18646,6 +18720,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -18785,6 +18860,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -18919,6 +18995,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -19053,6 +19130,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -19187,6 +19265,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -19321,6 +19400,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -19486,6 +19566,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -19620,6 +19701,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -20066,6 +20148,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -20200,6 +20283,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -20446,6 +20530,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -20580,6 +20665,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -20714,6 +20800,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -20960,6 +21047,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -21206,6 +21294,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -21340,6 +21429,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -21653,6 +21743,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -21787,6 +21878,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -21921,6 +22013,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -22055,6 +22148,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -22189,6 +22283,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -22691,6 +22786,7 @@ MonoBehaviour:
         m_CallState: 2
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
+  timeSinceDisabled: 0
   maxDistance: 0.1
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -23022,7 +23118,7 @@ MonoBehaviour:
       Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-        Gain: 4
+        Gain: 5
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
@@ -23033,7 +23129,7 @@ MonoBehaviour:
       Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-        Gain: -4
+        Gain: -5
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
@@ -23121,7 +23217,7 @@ MonoBehaviour:
   RadialAxis:
     Value: 1
     Center: 1
-    Range: {x: 1, y: 1}
+    Range: {x: 0.2, y: 2}
     Wrap: 0
     Recentering:
       Enabled: 0
@@ -23363,12 +23459,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1302718741}
+  - {fileID: 2144270623}
   - {fileID: 1187404469}
   - {fileID: 923158803}
   - {fileID: 4571948724913137774}
   - {fileID: 33058185}
   - {fileID: 679873322}
-  - {fileID: 2144270623}
   - {fileID: 798806500}
   - {fileID: 1032962436}
   - {fileID: 1154142577}
