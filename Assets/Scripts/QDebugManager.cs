@@ -44,11 +44,7 @@ public class QDebugManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (DebugVisualisation debugVisualisation in debugVisualisations)
-        {
-            debugVisualisation.meshRenderers = QTools.GetAllMeshRenderers(debugVisualisation.material);
-    //  QDebugManager.Instance.Trace(this, "");
-        }
+        InitialiseDebugVisualisations();
     }
 
     private void Update()
@@ -56,17 +52,23 @@ public class QDebugManager : MonoBehaviour
         VisualisationRoutine();
     }
 
-
+    private void InitialiseDebugVisualisations()
+    {
+        foreach (DebugVisualisation debugVisualisation in debugVisualisations)
+        {
+            debugVisualisation.meshRenderers = QTools.GetAllMeshRenderers(debugVisualisation.material);
+        }
+    }
 
     private async void VisualisationRoutine()
     {
         foreach (DebugVisualisation debugVisualisation in debugVisualisations)
         {
-            if (debugVisualisation.enabled)
-                foreach (MeshRenderer meshRenderer in debugVisualisation.meshRenderers)
-                {
-                    meshRenderer.enabled = debugVisualisation.enabled;
-                }
+            foreach (MeshRenderer meshRenderer in debugVisualisation.meshRenderers)
+            {
+                meshRenderer.enabled = debugVisualisation.enabled;
+                QDebugManager.Instance.Mild(this, "set MeshRenderer " + meshRenderer.name + " to " + debugVisualisation.enabled);
+            }
         }
     }
 
