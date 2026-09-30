@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
-
 public class PlayerMovement : MonoBehaviour
 {
 
@@ -17,20 +15,17 @@ public class PlayerMovement : MonoBehaviour
     public bool invertUpdateRotationAction;
 
     [Tooltip("Meters per second")]
-    public float speed;
+    [SerializeField] private float speed;
+    public float Speed => speed;
     public float jumpForce;
-
-    private Vector2 moveInput;
-
-    private void FixedUpdate()
-    {
-        QDebugManager.Instance.Trace(this, "pressed: " + moveAction.action.IsPressed());
-        if (moveAction.action.IsPressed())
-            HandlePlayerMovement();
-    }
+    [Tooltip("If the player's vertical velocity is above this value the player will be considered jumping. Uses the same unit as the jumpForce variable.")]
+    public float jumpForceDetectionTolerance;
+    
 
     private void Update()
     {
+        HandlePlayerMovement();
+
         UpdatePlayerRotation();
         QDebugManager.Instance.Trace(this, "pressed: " + jumpAction.action.IsPressed());
         if (jumpAction.action.IsPressed())
@@ -40,20 +35,24 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Jump()
-    {
-        QDebugManager.Instance.Mild(this, "Jumping");
-        rigidBody.AddForce(0f, jumpForce * 100f, 0f); // for some reason this thing needs some real high numbers to do anything interesting, so to compensate I * 100f
-        verticalState.CurrentVerticalState = EVerticalState.Jumping;
-        verticalState.GroundDetection = true;
-    }
 
     public bool AbleToJump()
     {
         if (verticalState.CurrentVerticalState != EVerticalState.Grounded)
             return false;
 
-        return true;
+        if (rigidBody.linearVelocity.y >= jumpForceDetectionTolerance * 100f)
+            return false;
+
+        return true;    // If player is grounded return true
+    }
+
+    public void Jump()
+    {
+        QDebugManager.Instance.Mild(this, "Jumping");
+        rigidBody.linearVelocity.Set(0f, jumpForce * 100f, 0f); // for some reason this thing needs some real high numbers to do anything interesting, so to compensate I * 100f
+        verticalState.CurrentVerticalState = EVerticalState.Jumping;
+        verticalState.GroundDetection = true;
     }
 
     private void UpdatePlayerRotation()
@@ -67,8 +66,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandlePlayerMovement()
     {
-        moveInput = moveAction.action.ReadValue<Vector2>();
+        QDebugManager.Instance.Trace(this, "pressed: " + moveAction.action.IsPressed());
+        if (moveAction.action.IsPressed())
+            MovePlayer(moveAction.action.ReadValue<Vector2>());
+    }
 
+    private void MovePlayer(Vector2 moveInput)
+    {
         Vector2 vector2Right = new(transform.right.x, transform.right.z);
         QDebugManager.Instance.Trace(this, "vector2Right: " + vector2Right);
         Vector2 vector2Forward = new(transform.forward.x, transform.forward.z);
@@ -77,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 directionAdjustedMoveInput = moveInput.x * vector2Right.normalized + moveInput.y * vector2Forward.normalized;
         QDebugManager.Instance.Trace(this, "directionAdjustedMoveInput: " + directionAdjustedMoveInput);
 
-        Vector2 speedAdjustedMoveInput = directionAdjustedMoveInput.normalized * (Time.fixedDeltaTime * speed);
+        Vector2 speedAdjustedMoveInput = directionAdjustedMoveInput.normalized * (Time.deltaTime * speed);
         QDebugManager.Instance.Trace(this, "speedAdjustedMoveInput: " + speedAdjustedMoveInput);
 
         Vector3 moveDirection = new(speedAdjustedMoveInput.x, 0, speedAdjustedMoveInput.y);
