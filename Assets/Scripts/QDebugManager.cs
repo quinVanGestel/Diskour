@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public enum ELogLevels
@@ -19,57 +20,15 @@ public class QDebugManager : MonoBehaviour
         public ELogLevels logLevel;
     }
 
-    [Serializable]
-    public class DebugVisualisation
-    {
-        public Material material;
-        public bool enabled;
-        public MeshRenderer[] meshRenderers;
-    }
-
     private static QDebugManager instance;
-    public static QDebugManager Instance
-    {
-        get { return instance; }
-    }
+    public static QDebugManager Instance => instance;
 
     public TypeLogLevel[] typeLogLevels;
 
-    public DebugVisualisation[] debugVisualisations;
 
     private void Awake()
     {
         SingletonSetup();
-    }
-
-    private void Start()
-    {
-        InitialiseDebugVisualisations();
-    }
-
-    private void Update()
-    {
-        VisualisationRoutine();
-    }
-
-    private void InitialiseDebugVisualisations()
-    {
-        foreach (DebugVisualisation debugVisualisation in debugVisualisations)
-        {
-            debugVisualisation.meshRenderers = QTools.GetAllMeshRenderers(debugVisualisation.material);
-        }
-    }
-
-    private async void VisualisationRoutine()
-    {
-        foreach (DebugVisualisation debugVisualisation in debugVisualisations)
-        {
-            foreach (MeshRenderer meshRenderer in debugVisualisation.meshRenderers)
-            {
-                meshRenderer.enabled = debugVisualisation.enabled;
-                QDebugManager.Instance.Mild(this, "set MeshRenderer " + meshRenderer.name + " to " + debugVisualisation.enabled);
-            }
-        }
     }
 
     private ELogLevels ComponentLogLevel(Component component)
@@ -142,7 +101,7 @@ public class QDebugManager : MonoBehaviour
 
     private void SingletonSetup()
     {
-        if (instance != null)
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
             return;

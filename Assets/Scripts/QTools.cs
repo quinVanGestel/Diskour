@@ -187,15 +187,15 @@ public static class QTools
     }
 
     /// <returns>All the mesh renderers in the hierarchy that have this material.</returns>
-    public static MeshRenderer[] GetAllMeshRenderers(Material material)
+    public static MeshRenderer[] GetAllMeshRenderers(Material requestedMaterial)
     {
         MeshRenderer[] allMeshRenderers = GameObject.FindObjectsByType<MeshRenderer>();
         List<MeshRenderer> requestedMeshRenderers = new();
         foreach (MeshRenderer meshRenderer in allMeshRenderers)
         {
-            foreach (Material meshRendererMaterial in meshRenderer.materials)
+            foreach (Material meshRendererMaterial in meshRenderer.sharedMaterials)
             {
-                if (meshRendererMaterial == material)
+                if (requestedMaterial.name.Contains(meshRendererMaterial.name))
                 {
                     requestedMeshRenderers.Add(meshRenderer);
                     break;

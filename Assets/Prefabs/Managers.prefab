@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3146806321757211415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5715248136436968386}
+  - component: {fileID: 5316782232140278040}
+  - component: {fileID: 923727994352472084}
+  - component: {fileID: 9057994452534906865}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5715248136436968386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146806321757211415}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.4646, y: -1.87068, z: 4.70691}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5316782232140278040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146806321757211415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f08d9c16e6863b40bbad0a447cddb5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+--- !u!114 &923727994352472084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146806321757211415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e23b11486b5bc4dba797f6fb87bf2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneManager
+  nextSceneId: -1
+--- !u!114 &9057994452534906865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146806321757211415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee37e9e97c82644e9b1ddf848def6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QDebugManager
+  typeLogLevels:
+  - component: {fileID: 0}
+    logLevel: 2
+  - component: {fileID: 0}
+    logLevel: 3
+  - component: {fileID: 5316782232140278040}
+    logLevel: 3
+  - component: {fileID: 0}
+    logLevel: 3
+  - component: {fileID: 0}
+    logLevel: 3
+  - component: {fileID: 9057994452534906865}
+    logLevel: 4
+  debugVisualisations:
+  - material: {fileID: 2100000, guid: 0240668e502957848ba7a9dc07c3cee8, type: 2}
+    enabled: 0
+    meshRenderers: []
+  - material: {fileID: 2100000, guid: 87fb59d36cb113b419f5c536a3c14ab9, type: 2}
+    enabled: 0
+    meshRenderers: []
+  - material: {fileID: 2100000, guid: 1137d14b862cdae48bdedc9c0b1dd3d7, type: 2}
+    enabled: 0
+    meshRenderers: []

@@ -18,16 +18,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     public float Speed => speed;
     public float jumpForce;
-    [Tooltip("If the player's vertical velocity is above this value the player will be considered jumping. Uses the same unit as the jumpForce variable.")]
-    public float jumpForceDetectionTolerance;
-    
+
+    // [Tooltip("If the player's vertical velocity is above this value the player will be considered jumping. Uses the same unit as the jumpForce variable.")]
+    // public float jumpForceDetectionTolerance;    // Redundant. VerticalState already does this with floatingTolerance.
+
 
     private void Update()
     {
         HandlePlayerMovement();
 
-        UpdatePlayerRotation();
-        QDebugManager.Instance.Trace(this, "pressed: " + jumpAction.action.IsPressed());
+        transform.rotation = CalculatePlayerRotation();
+        // QDebugManager.Instance.Trace(this, "pressed: " + jumpAction.action.IsPressed());
         if (jumpAction.action.IsPressed())
         {
             if (AbleToJump())
@@ -41,8 +42,8 @@ public class PlayerMovement : MonoBehaviour
         if (verticalState.CurrentVerticalState != EVerticalState.Grounded)
             return false;
 
-        if (rigidBody.linearVelocity.y >= jumpForceDetectionTolerance * 100f)
-            return false;
+        // if (rigidBody.linearVelocity.y >= jumpForceDetectionTolerance * 100f)
+        //     return false;
 
         return true;    // If player is grounded return true
     }
@@ -50,23 +51,25 @@ public class PlayerMovement : MonoBehaviour
     public void Jump()
     {
         QDebugManager.Instance.Mild(this, "Jumping");
-        rigidBody.linearVelocity.Set(0f, jumpForce * 100f, 0f); // for some reason this thing needs some real high numbers to do anything interesting, so to compensate I * 100f
-        verticalState.CurrentVerticalState = EVerticalState.Jumping;
-        verticalState.GroundDetection = true;
+        rigidBody.linearVelocity = new(0f, jumpForce, 0f);
+        // verticalState.CurrentVerticalState = EVerticalState.Jumping;
+        // verticalState.GroundDetection = true;
     }
 
-    private void UpdatePlayerRotation()
+    private Quaternion CalculatePlayerRotation()
     {
+        Vector3 newRotationVector3 = new(0f, transform.rotation.eulerAngles.y, 0f);
         if ((!invertUpdateRotationAction && !updateRotationAction.action.IsPressed())    // If the button needs to be held but the button is not held
         || (invertUpdateRotationAction && updateRotationAction.action.IsPressed()))    // or if the button needs to be released but the button is held
-            return;
+            return Quaternion.Euler(newRotationVector3);    // Return old y rotation.
 
-        transform.rotation = Quaternion.Euler(transform.rotation.x, playerCamera.transform.rotation.eulerAngles.y, transform.rotation.z);
+        newRotationVector3.y = playerCamera.transform.rotation.eulerAngles.y;   // Make the y rotation follow the camera.
+        return Quaternion.Euler(newRotationVector3);
     }
 
     private void HandlePlayerMovement()
     {
-        QDebugManager.Instance.Trace(this, "pressed: " + moveAction.action.IsPressed());
+        // QDebugManager.Instance.Trace(this, "pressed: " + moveAction.action.IsPressed());
         if (moveAction.action.IsPressed())
             MovePlayer(moveAction.action.ReadValue<Vector2>());
     }
@@ -84,15 +87,18 @@ public class PlayerMovement : MonoBehaviour
         Vector2 speedAdjustedMoveInput = directionAdjustedMoveInput.normalized * (Time.deltaTime * speed);
         QDebugManager.Instance.Trace(this, "speedAdjustedMoveInput: " + speedAdjustedMoveInput);
 
-        Vector3 moveDirection = new(speedAdjustedMoveInput.x, 0, speedAdjustedMoveInput.y);
-        QDebugManager.Instance.Trace(this, "movedirection: " + moveDirection);
-        Vector3 currentPosition = transform.position;
-        QDebugManager.Instance.Trace(this, "currentPosition: " + currentPosition);
+        Vector3 moveDirectionVector3 = new(speedAdjustedMoveInput.x, 0f, speedAdjustedMoveInput.y);
+        QDebugManager.Instance.Trace(this, "moveDirectionVector3: " + moveDirectionVector3);
 
-        Vector3 newPosition = currentPosition + moveDirection;
-        QDebugManager.Instance.Trace(this, "newPosition: " + newPosition);
+        Vector3 currentPositionVector3 = transform.position;
+        QDebugManager.Instance.Trace(this, "currentPositionVector3: " + currentPositionVector3);
 
-        transform.position = newPosition;
+        Vector3 newPositionVector3 = currentPositionVector3 + moveDirectionVector3;
+        // Vector3 newPositionVector3 = new(newPositionVector2.x, transform.position.y, newPositionVector2.y);
+        QDebugManager.Instance.Trace(this, "newPositionVector3: " + newPositionVector3);
+
+        // rigidBody.AddForce(moveDirectionVector3);
+        transform.position = newPositionVector3;
     }
 
 }

@@ -51,11 +51,13 @@ public class VerticalState : MonoBehaviour
                 return;
             }
             currentVerticalState = value;
-            QDebugManager.Instance.Mild(this, "CurrentVerticalState was set to " + value.ToString());
+            QDebugManager.Instance.Trace(this, "CurrentVerticalState was set to " + value.ToString());
         }
     }
 
+
     [Header("Debug")]
+    [SerializeField] private EVerticalState currentVerticalStateReadOnly;
     private EVerticalState previousVerticalState;
 
     private void Awake()
@@ -66,48 +68,54 @@ public class VerticalState : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // CurrentVerticalState = CalculateVerticalState();
-        // if (previousVerticalState != CurrentVerticalState)
-        // {
-        // QDebugManager.Instance.Verbose(this, "Current vertical state: " + CurrentVerticalState);
-        // previousVerticalState = CurrentVerticalState;
-        // }
+        CurrentVerticalState = CalculateVerticalState();
+        currentVerticalStateReadOnly = CurrentVerticalState;
+        if (previousVerticalState != CurrentVerticalState)
+        {
+            QDebugManager.Instance.Verbose(this, "Current vertical state: " + CurrentVerticalState);
+            previousVerticalState = CurrentVerticalState;
+        }
 
     }
 
     private void Update()
     {
-        GroundDetection = (CurrentVerticalState != EVerticalState.Grounded);
+        GroundDetection = CurrentVerticalState != EVerticalState.Grounded;  // If it's grounded it won't detect and vice versa
     }
 
-    // private EVerticalState CalculateVerticalState()
-    // {
-    //     foreach (Detector groundDetector in groundDetectors)
-    //     {
-    //         // bool timeSinceLastCheckIsOutdated = groundDetector.timeSinceDisabled > groundDetector.timeSinceLastCheck;
+    private EVerticalState CalculateVerticalState()
+    {
+
+        float upwardVelocity = rigidBody.linearVelocity.y;
+        if (upwardVelocity >= floatingTolerance)
+            return EVerticalState.Jumping;
+
+        if (upwardVelocity <= -floatingTolerance)
+            return EVerticalState.Falling;
+
+        if (upwardVelocity >= -floatingTolerance && upwardVelocity <= floatingTolerance && currentVerticalState != EVerticalState.Grounded)
+            return EVerticalState.Floating;     // beware! At the peak of the jump, before falling, the player will be considered to be floating. 
+
+
+        // foreach (Detector groundDetector in groundDetectors)
+        // {
+        //     // bool timeSinceLastCheckIsOutdated = groundDetector.timeSinceDisabled > groundDetector.timeSinceLastCheck;
 
 
 
-    //         if (groundDetector.targetDetectedLastCheck && (groundDetector.timeSinceLastCheck <= Time.fixedDeltaTime) && CurrentVerticalState != EVerticalState.Jumping)
-    //             return EVerticalState.Grounded;
-    //     }
+        //     if (groundDetector.targetDetectedLastCheck && (groundDetector.timeSinceLastCheck <= Time.fixedDeltaTime) && CurrentVerticalState != EVerticalState.Jumping)
+        //         return EVerticalState.Grounded;
+        // }
 
-    //     float upwardVelocity = rigidBody.linearVelocity.y;
-    //     // if (upwardVelocity >= floatingTolerance)
-    //     //     return EVerticalState.Jumping;
 
-    //     if (upwardVelocity <= -floatingTolerance)
-    //         return EVerticalState.Falling;
-
-    //     if (upwardVelocity >= -floatingTolerance && upwardVelocity <= floatingTolerance && currentVerticalState != EVerticalState.Grounded)
-    //         return EVerticalState.Floating;     // beware! At the peak of the jump, before falling, the player will be considered to be floating. 
-
-    //     return CurrentVerticalState;
-    // }
+        return CurrentVerticalState;
+    }
 
     public void GroundDetected()
     {
-        GroundDetection = false;
+        CurrentVerticalState = EVerticalState.Grounded; // Assume it's grounded
+        CurrentVerticalState = CalculateVerticalState();// Until proven otherwise
+        GroundDetection = CurrentVerticalState != EVerticalState.Grounded;  // If it's grounded it won't detect and vice versa
     }
 
 }
