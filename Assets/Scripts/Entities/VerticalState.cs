@@ -85,19 +85,21 @@ public class VerticalState : MonoBehaviour
 
     private EVerticalState CalculateVerticalState()
     {
-
         float upwardVelocity = rigidBody.linearVelocity.y;
-        if (upwardVelocity >= floatingTolerance)
+
+        bool velocityExceedsTolerance = upwardVelocity > floatingTolerance;
+        if (velocityExceedsTolerance)
         {
             return EVerticalState.Jumping;
         }
 
-        if (upwardVelocity <= -floatingTolerance)
+        bool velocitySubceedsInvertedTolerance = upwardVelocity < -floatingTolerance;
+        if (velocitySubceedsInvertedTolerance)
         {
             return EVerticalState.Falling;
         }
 
-        if (upwardVelocity >= -floatingTolerance && upwardVelocity <= floatingTolerance && currentVerticalState != EVerticalState.Grounded)
+        if (!velocityExceedsTolerance && !velocitySubceedsInvertedTolerance && currentVerticalState != EVerticalState.Grounded)
         {
             return EVerticalState.Floating;     // beware! At the peak of the jump, before falling, the player will be considered to be floating. 
         }
