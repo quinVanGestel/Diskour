@@ -19,9 +19,6 @@ public static class QTools
     /// <summary>
     /// Compares each number in array one to each number in array two. Finds the pair between which the distance is the largest. Returns that distance.
     /// </summary>
-    /// <param name="numbersArrayOne"></param>
-    /// <param name="numbersArrayTwo"></param>
-    /// <returns></returns>
     public static float DistanceLargest(float[] numbersArrayOne, float[] numbersArrayTwo)
     {
         float largestDistanceSoFar = numbersArrayOne[0];
@@ -42,9 +39,6 @@ public static class QTools
     /// <summary>
     /// Compares each number in array one to each number in array two. Finds the pair between which the distance is the smallest. Returns that distance.
     /// </summary>
-    /// <param name="numbersArrayOne"></param>
-    /// <param name="numbersArrayTwo"></param>
-    /// <returns></returns>
     public static float DistanceSmallest(float[] numbersArrayOne, float[] numbersArrayTwo)
     {
         float smallestDistanceSoFar = numbersArrayOne[0];
@@ -65,8 +59,6 @@ public static class QTools
     /// <summary>
     /// Returns all children of the given gameobject, looks only one layer deep.
     /// </summary>
-    /// <param name="parentTransform"></param>
-    /// <returns></returns>
     public static GameObject[] GetAllChildren(GameObject parent)
     {
         List<GameObject> children = new();
@@ -82,9 +74,6 @@ public static class QTools
     /// <summary>
     /// Returns a component of the requested type from the gameobject siblings of the given gameobject.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="gameObject"></param>
-    /// <returns></returns>
     public static T GetComponentInSiblings<T>(GameObject gameObject)
     {
         return gameObject.transform.parent.gameObject.GetComponentInChildren<T>();
@@ -93,9 +82,6 @@ public static class QTools
     /// <summary>
     /// Returns all components of the requested type from the gameobject siblings of the given gameobject.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="gameObject"></param>
-    /// <returns></returns>
     public static T[] GetComponentsInSiblings<T>(GameObject gameObject)
     {
         return gameObject.transform.parent.gameObject.GetComponentsInChildren<T>();
@@ -104,11 +90,6 @@ public static class QTools
     // /// <summary>
     // /// I recommend using the resizer script where possible, as this allows for variable storage.
     // /// </summary>
-    // /// <param name="newSize"></param>
-    // /// <param name="resizeMode"></param>
-    // /// <param name="gameObject"></param>
-    // /// <param name="currentSize"></param>
-    // /// <returns></returns>
     // public static Vector3 SetSize(Vector3 newSize, ResizeModes resizeMode, GameObject gameObject, Vector3 currentSize)
     // {
     //     Vector3 rescaleFactor = gameObject.transform.localScale;
@@ -133,14 +114,8 @@ public static class QTools
     }
 
     //A beautiful function I definitely did not steal :3
-    /// <summary>
-    /// 
-    /// </summary>
     /// <param name="target">Mean of the distribution</param>
-    /// <param name="minInclusive"></param>
-    /// <param name="maxInclusive"></param>
     /// <param name="standardDeviation">Standard deviation controls the spread of values</param>
-    /// <returns></returns>
     public static float GenerateRandomNumberNearTarget(float target, float minInclusive, float maxInclusive, float standardDeviation)
     {
         System.Random random = new();
