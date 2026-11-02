@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(VerticalState))]
 public class PlayerMovement : MonoBehaviour
 {
 
     public VerticalState verticalState;
     public Rigidbody rigidBody;
-    public Camera playerCamera;
 
     [SerializeField] private InputActionReference moveAction;
     [SerializeField] private InputActionReference jumpAction;
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         || (invertUpdateRotationAction && updateRotationAction.action.IsPressed()))    // or if the button needs to be released but the button is held
             return Quaternion.Euler(newRotationVector3);    // Return old y rotation.
 
-        newRotationVector3.y = playerCamera.transform.rotation.eulerAngles.y;   // Make the y rotation follow the camera.
+        newRotationVector3.y = GameState.Instance.PlayerCamera.transform.rotation.eulerAngles.y;   // Make the y rotation follow the camera.
         return Quaternion.Euler(newRotationVector3);
     }
 

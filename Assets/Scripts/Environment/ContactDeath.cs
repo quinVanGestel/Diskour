@@ -3,14 +3,5 @@ using UnityEngine;
 
 public abstract class ContactDeath : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
-    {
-        ICanDie mortality = collision.gameObject.GetComponent<ICanDie>();
-        if (mortality == null)
-        {
-            return;
-        }
-
-        mortality.Kill();
-    }
+// wow now I'm the stub!
 }

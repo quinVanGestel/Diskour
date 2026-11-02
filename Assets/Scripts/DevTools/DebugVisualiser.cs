@@ -25,7 +25,7 @@ public class DebugVisualiser : MonoBehaviour
     private void Start()
     {
         SingletonSetup();
-        RefreshMeshRendererReferences();
+        FetchMeshRendererReferences();
     }
 
     private void Update()
@@ -39,12 +39,12 @@ public class DebugVisualiser : MonoBehaviour
         timeSinceRefresh += Time.deltaTime;
         if (timeSinceRefresh >= refreshRate)
         {
-            RefreshMeshRendererReferences();
+            FetchMeshRendererReferences();
             timeSinceRefresh = 0f;
         }
     }
 
-    public void RefreshMeshRendererReferences()
+    public void FetchMeshRendererReferences()
     {
         QDebugManager.Instance.Verbose(this, "Running RefreshMeshRendererReferences");
         foreach (DebugVisualisation debugVisualisation in debugVisualisations)

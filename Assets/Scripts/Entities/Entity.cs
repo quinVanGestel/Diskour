@@ -2,12 +2,10 @@ using System;
 using System.Xml;
 using UnityEngine;
 
-[RequireComponent(typeof(VerticalState))]
-
-public abstract class Entity : MonoBehaviour, ICanDie
+[RequireComponent(typeof(Rigidbody))]
+public abstract class Entity : MonoBehaviour, IStayInBounds
 {
-    public Transform spawnAnchor;
-    public bool debugLog;
+    protected bool isDead;
 
     private void Update()
     {
@@ -29,6 +27,9 @@ public abstract class Entity : MonoBehaviour, ICanDie
         transform.position.Set(transform.position.x, GameManager.Instance.boundsLower.y, transform.position.z); // To make sure it doesn't overshoot.
     }
 
-    public abstract void Kill();
+    public virtual void Kill()
+    {
+        isDead = true;
+    }
 
 }

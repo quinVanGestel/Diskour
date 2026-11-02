@@ -8,8 +8,7 @@ public enum EVerticalState
 
 public class VerticalState : MonoBehaviour
 {
-
-    public Rigidbody rigidBody;
+    private Rigidbody rigidBody;
 
     [Tooltip("Pick one of the two :)")]
     public GameObject groundDetectorsParent;
@@ -62,8 +61,15 @@ public class VerticalState : MonoBehaviour
 
     private void Awake()
     {
+        FetchReferences();
+    }
+
+    private void FetchReferences()
+    {
         if (groundDetectorsParent != null && groundDetectors.Length == 0)
             groundDetectors = groundDetectorsParent.GetComponentsInChildren<Detector>();
+
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()

@@ -1,4 +1,15 @@
+using UnityEngine;
+
 public class DeathSpike : ContactDeath
 {
-    // Stub
+    private void OnCollisionEnter(Collision collision)
+    {
+        ISpikeAble mortal = collision.gameObject.GetComponent<ISpikeAble>();
+        if (mortal == null)
+        {
+            return;
+        }
+
+        mortal.Kill();
+    }
 }

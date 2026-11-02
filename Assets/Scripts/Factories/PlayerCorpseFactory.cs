@@ -27,14 +27,9 @@ public class PlayerCorpseFactory : Factory
 
     #endregion
 
-    [SerializeField] private Transform playerSpawnAnchor;
-    [SerializeField] private Camera playerCamera;
 
     [Tooltip("1,1,1 means nothing happens, between 0 and 1 shrinks, above 1 grows.")]
     [SerializeField] private Vector3 sizeMultiplierOnIteration = new(1f, 1f, 1f);
-
-    [Header("Readonly")]
-    [SerializeField] private int currentIteration;
 
     private void Awake()
     {
@@ -46,12 +41,10 @@ public class PlayerCorpseFactory : Factory
         GameObject prefabInstance = Instantiate(prefab,
         position, Quaternion.identity);
 
-        currentIteration++;
+        GameState.Instance.IterationCount++;
         ShrinkPlayer(prefabInstance.transform);
 
-        Player playerScript = prefabInstance.GetComponent<Player>();
-        playerScript.spawnAnchor = playerSpawnAnchor;
-        playerScript.GetComponent<PlayerMovement>().playerCamera = playerCamera;
+        GameState.Instance.PlayerReference = prefabInstance.GetComponent<Player>();
 
         IProduct newProduct = prefabInstance.GetComponent<IProduct>();
         newProduct.Initialize();
@@ -61,7 +54,7 @@ public class PlayerCorpseFactory : Factory
 
     private void ShrinkPlayer(Transform playerTransform)
     {
-        Vector3 newSize = QTools.newSizeExponential(playerTransform.localScale, sizeMultiplierOnIteration, currentIteration);
+        Vector3 newSize = QTools.newSizeExponential(playerTransform.localScale, sizeMultiplierOnIteration, GameState.Instance.IterationCount);
         playerTransform.localScale = newSize;
     }
 
