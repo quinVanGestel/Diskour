@@ -30,7 +30,7 @@ public abstract class Detector : MonoBehaviour
     /// </summary>
     public float timeSinceDisabled;
 
-    private bool detectionEnabled;
+    [SerializeField] private bool detectionEnabled = true;
     public bool DetectionEnabled
     {
         get { return detectionEnabled; }
