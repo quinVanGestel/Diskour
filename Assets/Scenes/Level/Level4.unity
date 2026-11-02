@@ -46285,7 +46285,7 @@ PrefabInstance:
       objectReference: {fileID: 209337836}
     - target: {fileID: 4128932282036776844, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
       propertyPath: m_VersionIndex
-      value: 1078
+      value: 1081
       objectReference: {fileID: 0}
     - target: {fileID: 5953215564328618416, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
       propertyPath: playerCamera
