@@ -71,7 +71,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -206,7 +206,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -341,7 +341,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -566,7 +566,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -701,7 +701,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -836,7 +836,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -971,7 +971,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -1241,7 +1241,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -1376,7 +1376,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -1511,7 +1511,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -1646,7 +1646,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -1781,7 +1781,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -1916,7 +1916,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -2051,7 +2051,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -2186,7 +2186,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -2742,7 +2742,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1039
+  m_VersionIndex: 1057
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3039,7 +3039,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -3174,7 +3174,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -3309,7 +3309,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -3534,7 +3534,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -3669,7 +3669,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -3804,7 +3804,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -3939,7 +3939,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -4074,7 +4074,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -4209,7 +4209,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -4344,7 +4344,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -4479,7 +4479,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -4614,7 +4614,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -4749,7 +4749,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -4884,7 +4884,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -5019,7 +5019,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -5154,7 +5154,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -5289,7 +5289,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -5424,7 +5424,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -5559,7 +5559,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -5694,7 +5694,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -5829,7 +5829,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -5964,7 +5964,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -6099,7 +6099,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -6234,7 +6234,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -6369,7 +6369,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -6504,7 +6504,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -6639,7 +6639,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -6774,7 +6774,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -6909,7 +6909,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -7044,7 +7044,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -7179,7 +7179,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -7314,7 +7314,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -7449,7 +7449,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -7584,7 +7584,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -7719,7 +7719,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -7854,7 +7854,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -7989,7 +7989,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -8124,7 +8124,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -8259,7 +8259,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -8394,7 +8394,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -8529,7 +8529,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -8664,7 +8664,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -8799,7 +8799,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -8967,7 +8967,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -9102,7 +9102,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -9237,7 +9237,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -9372,7 +9372,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -9507,7 +9507,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -9642,7 +9642,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -9777,7 +9777,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -9912,7 +9912,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -10047,7 +10047,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -10182,7 +10182,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -10317,7 +10317,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -10452,7 +10452,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -10587,7 +10587,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -10782,6 +10782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6e2765af0052840881b96088f1069e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  spawnAnchor: {fileID: 0}
   debugLog: 1
 --- !u!114 &5953215564328618416
 MonoBehaviour:
@@ -10904,8 +10905,8 @@ MonoBehaviour:
   - {fileID: 7770520095948653506}
   - {fileID: 6503083157424024790}
   - {fileID: 5622479888254843201}
-  floatingTolerance: 0.01
-  currentVerticalStateReadOnly: 0
+  floatingTolerance: 0.1
+  currentVerticalStateReadOnly: 3
 --- !u!54 &4855044869627460480
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11004,7 +11005,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -11139,7 +11140,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -11274,7 +11275,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -11409,7 +11410,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -11577,7 +11578,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -11712,7 +11713,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -11847,7 +11848,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -11982,7 +11983,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -12117,7 +12118,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -12252,7 +12253,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -12387,7 +12388,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -12522,7 +12523,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2
@@ -12657,7 +12658,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
-  maxDistance: 0.1
+  maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
     serializedVersion: 2

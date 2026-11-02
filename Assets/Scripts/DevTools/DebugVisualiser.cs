@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DebugVisualiser : MonoBehaviour
@@ -18,24 +19,34 @@ public class DebugVisualiser : MonoBehaviour
 
     public DebugVisualisation[] debugVisualisations;
 
-    private void Awake()
-    {
-    }
+    [SerializeField] private float refreshRate;
+    private float timeSinceRefresh;
 
     private void Start()
     {
         SingletonSetup();
-        InitialiseDebugVisualisations();
+        RefreshMeshRendererReferences();
     }
 
     private void Update()
     {
         VisualisationRoutine();
+        RefreshRoutine();
     }
 
-    private void InitialiseDebugVisualisations()
+    private void RefreshRoutine()
     {
-        QDebugManager.Instance.Verbose(this, "Running InitialiseDebugVisualisations");
+        timeSinceRefresh += Time.deltaTime;
+        if (timeSinceRefresh >= refreshRate)
+        {
+            RefreshMeshRendererReferences();
+            timeSinceRefresh = 0f;
+        }
+    }
+
+    public void RefreshMeshRendererReferences()
+    {
+        QDebugManager.Instance.Verbose(this, "Running RefreshMeshRendererReferences");
         foreach (DebugVisualisation debugVisualisation in debugVisualisations)
         {
             debugVisualisation.meshRenderers = QTools.GetAllMeshRenderers(debugVisualisation.material);
@@ -50,6 +61,11 @@ public class DebugVisualiser : MonoBehaviour
         {
             foreach (MeshRenderer meshRenderer in debugVisualisation.meshRenderers)
             {
+                if (meshRenderer == null)
+                {
+                    break;
+                }
+
                 meshRenderer.enabled = debugVisualisation.enabled;
                 QDebugManager.Instance.Trace(this, "set MeshRenderer " + meshRenderer.name + " to " + debugVisualisation.enabled);
             }

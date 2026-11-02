@@ -4,12 +4,14 @@ using UnityEngine.Rendering;
 public class GameManager : MonoBehaviour
 {
 
-    public static GameManager instance;
+    private static GameManager instance;
     public static GameManager Instance
     {
         get { return instance; }
     }
 
+    public Vector3 boundsUpper = new(100f, 100f, 100f);
+    public Vector3 boundsLower = new(-100f, -100f, -100f);
 
     private void Awake()
     {

@@ -106,6 +106,23 @@ public static class QTools
     //     return rescaleFactor;
     // }
 
+
+    public static Vector3 newSizeExponential(Vector3 currentSize, Vector3 sizeMultiplier, float power)
+    {
+        float newSizeMultiplierX = MathF.Pow(sizeMultiplier.x, power);
+        float newSizeMultiplierY = MathF.Pow(sizeMultiplier.y, power);
+        float newSizeMultiplierZ = MathF.Pow(sizeMultiplier.z, power);
+
+        float newSizeX = currentSize.x * newSizeMultiplierX;
+        float newSizeY = currentSize.y * newSizeMultiplierY;
+        float newSizeZ = currentSize.z * newSizeMultiplierZ;
+
+        Vector3 newSize = new(newSizeX, newSizeY, newSizeZ);
+
+        return newSize;
+    }
+
+
     /// <returns>Either -1 or 1</returns>
     public static int RandomDirection1D()
     {
