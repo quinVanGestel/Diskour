@@ -38,7 +38,7 @@ public abstract class Detector : MonoBehaviour
         {
             detectionEnabled = value;
             timeSinceDisabled = 0f;
-            QDebugManager.Instance.Verbose(this, "detectionEnabled set to " + value);
+            // QDebugManager.Instance.Verbose(this, "detectionEnabled set to " + value);
         }
     }
 

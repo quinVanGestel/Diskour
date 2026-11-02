@@ -13,17 +13,25 @@ public class QDebugManager : MonoBehaviour
 
 
     [Serializable]
-    public class TypeLogLevel
+    public class CategoryLogLevel
     {
-        [Tooltip("Any one of that type will do! Which specific game object you get it from should not matter at all.")]
-        public MonoBehaviour component;
+        public string categoryName;
         public ELogLevels logLevel;
+        public string[] typeNames;
+
+        public CategoryLogLevel(string _categoryName = "unnamed", ELogLevels _logLevel = ELogLevels.None)
+        {
+            categoryName = _categoryName;
+            logLevel = _logLevel;
+        }
     }
 
     private static QDebugManager instance;
     public static QDebugManager Instance => instance;
 
-    public TypeLogLevel[] typeLogLevels;
+    public bool warnIfUnableToFindLogLevel;
+
+    public CategoryLogLevel[] categoryLogLevels;
 
 
     private void Awake()
@@ -31,33 +39,41 @@ public class QDebugManager : MonoBehaviour
         SingletonSetup();
     }
 
-    private ELogLevels ComponentLogLevel(Component component)
+    private CategoryLogLevel ComponentCategory(Component component)
     {
         Type receivedComponentType = component.GetType();
 
-        foreach (TypeLogLevel typeLogLevel in typeLogLevels)
+        foreach (CategoryLogLevel categoryLogLevel in categoryLogLevels)
         {
-            Type componentType = typeLogLevel.component.GetType();
-            if (componentType == receivedComponentType)
+            foreach (string typeName in categoryLogLevel.typeNames)
             {
-                return typeLogLevel.logLevel;
+                Type categoryType = Type.GetType(typeName);
+                if (categoryType == receivedComponentType)
+                {
+                    return categoryLogLevel;
+                }
             }
         }
 
-        Debug.LogWarning("QDebugManager could not find the loglevel of " + receivedComponentType.Name);
-        return ELogLevels.None;
+        if (warnIfUnableToFindLogLevel)
+        {
+            Debug.LogWarning("QDebugManager could not find the loglevel of " + receivedComponentType.Name);
+        }
+        
+        CategoryLogLevel fallBackCategory = new();
+        return fallBackCategory;
     }
 
     private string FilterContent(Component component, string content)
     {
-        content = component.gameObject.name + "'s " + component.GetType().Name + ":\n" + content;
+        content = component.gameObject.name + "'s " + ComponentCategory(component).categoryName + ":\n" + content;
         return content;
     }
 
     public void Severe(Component component, string content)
     {
         content = FilterContent(component, content);
-        if (ComponentLogLevel(component) >= ELogLevels.Severe)
+        if (ComponentCategory(component).logLevel >= ELogLevels.Severe)
         {
             Debug.LogError(content);
         }
@@ -66,7 +82,7 @@ public class QDebugManager : MonoBehaviour
     public void Important(Component component, string content)
     {
         content = FilterContent(component, content);
-        if (ComponentLogLevel(component) >= ELogLevels.Important)
+        if (ComponentCategory(component).logLevel >= ELogLevels.Important)
         {
             Debug.LogWarning(content);
         }
@@ -75,7 +91,7 @@ public class QDebugManager : MonoBehaviour
     public void Mild(Component component, string content)
     {
         content = FilterContent(component, content);
-        if (ComponentLogLevel(component) >= ELogLevels.Mild)
+        if (ComponentCategory(component).logLevel >= ELogLevels.Mild)
         {
             Debug.Log(content);
         }
@@ -84,7 +100,7 @@ public class QDebugManager : MonoBehaviour
     public void Verbose(Component component, string content)
     {
         content = FilterContent(component, content);
-        if (ComponentLogLevel(component) >= ELogLevels.Verbose)
+        if (ComponentCategory(component).logLevel >= ELogLevels.Verbose)
         {
             Debug.Log(content);
         }
@@ -93,7 +109,7 @@ public class QDebugManager : MonoBehaviour
     public void Trace(Component component, string content)
     {
         content = FilterContent(component, content);
-        if (ComponentLogLevel(component) >= ELogLevels.Trace)
+        if (ComponentCategory(component).logLevel >= ELogLevels.Trace)
         {
             Debug.Log(content);
         }

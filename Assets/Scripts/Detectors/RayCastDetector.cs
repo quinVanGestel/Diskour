@@ -26,6 +26,6 @@ public class RayCastDetector : Detector
             QDebugManager.Instance.Verbose(this, "hit " + hitInfo.collider.gameObject.name);
             GameObjectDetected(hitInfo.collider.gameObject);
         }
-    }
-
+    }        
+    
 }

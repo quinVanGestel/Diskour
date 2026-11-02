@@ -25,7 +25,7 @@ public class VerticalState : MonoBehaviour
             foreach (Detector groundDetector in groundDetectors)
             {
                 groundDetector.DetectionEnabled = groundDetection;
-                QDebugManager.Instance.Trace(this, "DetectionEnabled is now " + groundDetection.ToString());
+                // QDebugManager.Instance.Trace(this, "DetectionEnabled is now " + groundDetection.ToString());
             }
         }
     }
@@ -80,7 +80,8 @@ public class VerticalState : MonoBehaviour
 
     private void Update()
     {
-        GroundDetection = CurrentVerticalState != EVerticalState.Grounded;  // If it's grounded it won't detect and vice versa
+        bool isGrounded = CurrentVerticalState == EVerticalState.Grounded;
+        GroundDetection = !isGrounded;  // If it's grounded it won't detect and vice versa
     }
 
     private EVerticalState CalculateVerticalState()
@@ -94,12 +95,13 @@ public class VerticalState : MonoBehaviour
         }
 
         bool velocitySubceedsInvertedTolerance = upwardVelocity < -floatingTolerance;
-        if (velocitySubceedsInvertedTolerance)
+        bool isGrounded = CurrentVerticalState == EVerticalState.Grounded;
+        if (velocitySubceedsInvertedTolerance && !isGrounded)
         {
             return EVerticalState.Falling;
         }
 
-        if (!velocityExceedsTolerance && !velocitySubceedsInvertedTolerance && currentVerticalState != EVerticalState.Grounded)
+        if (!velocityExceedsTolerance && !velocitySubceedsInvertedTolerance && !isGrounded)
         {
             return EVerticalState.Floating;     // beware! At the peak of the jump, before falling, the player will be considered to be floating. 
         }
