@@ -2,13 +2,32 @@ using Unity.Cinemachine;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerHorizontalMovement), typeof(PlayerCameraHandler), typeof(PlayerJump))]
+[RequireComponent(typeof(PlayerSound))]
 public class Player : Entity, IProduct, ISpikeAble
 {
     public string ProductName { get => name; set => gameObject.name = value; }
 
+    private Rigidbody rigidbody;
+    private PlayerHorizontalMovement playerMovement;
+    private VerticalState verticalState;
+    private PlayerCameraHandler playerCameraHandler;
+    private PlayerJump playerJump;
+    private PlayerSound playerSound;
+
+
     private void Start()
     {
         Initialize();
+    }
+
+    private void FetchDependencies()
+    {
+        rigidbody = GetComponent<Rigidbody>();
+        playerMovement = GetComponent<PlayerHorizontalMovement>();
+        verticalState = GetComponent<VerticalState>();
+        playerCameraHandler = GetComponent<PlayerCameraHandler>();
+        playerJump = GetComponent<PlayerJump>();
+        playerSound = GetComponent<PlayerSound>();
     }
 
     public void Initialize()
@@ -39,38 +58,34 @@ public class Player : Entity, IProduct, ISpikeAble
     {
         tag = "Untagged";
 
+        FetchDependencies();
+
         Destroy(this);
 
-        Rigidbody rigidbody = GetComponent<Rigidbody>();
-        if (rigidbody != null)
-        {
-            Destroy(rigidbody);
-        }
-        else
-        {
-            QDebugManager.Instance.Important(this, "failed to destroy rigidbody.");
-        }
+        TryRemoveComponent(playerJump);
+        TryRemoveComponent(rigidbody);
 
-        PlayerHorizontalMovement playerMovement = GetComponent<PlayerHorizontalMovement>();
-        if (playerMovement != null)
-        {
-            Destroy(playerMovement);
-        }
-        else
-        {
-            QDebugManager.Instance.Important(this, "failed to destroy playerMovement.");
-        }
+        Destroy(verticalState.groundDetectorsParent);
+        TryRemoveComponent(verticalState);
 
-        VerticalState verticalState = GetComponent<VerticalState>();
-        if (verticalState != null)
+        TryRemoveComponent(playerMovement);
+        TryRemoveComponent(playerCameraHandler);
+
+        TryRemoveComponent(playerSound);
+        TryRemoveComponent(playerSound.AudioSource);
+
+    }
+
+    /// <returns>Whether it was successful</returns>
+    private bool TryRemoveComponent(Component component)
+    {
+        if (component == null)
         {
-            Destroy(verticalState.groundDetectorsParent);
-            Destroy(verticalState);
+            QDebugManager.Instance.Important(this, "failed to destroy " + component.name + ".");
+            return false;
         }
-        else
-        {
-            QDebugManager.Instance.Important(this, "failed to destroy verticalState.");
-        }
+        Destroy(component);
+        return true;
     }
 
 }

@@ -10741,6 +10741,8 @@ GameObject:
   - component: {fileID: 4855044869627460480}
   - component: {fileID: 5901635697930181120}
   - component: {fileID: 7441449176109915127}
+  - component: {fileID: 3147602433386132500}
+  - component: {fileID: 6460791851975565545}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -10868,14 +10870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc80d81dea5c94f48b6fc598d1e36d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  verticalState: {fileID: 6367864290167004597}
-  rigidBody: {fileID: 4855044869627460480}
   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  updateRotationAction: {fileID: 4731786802728998838, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  invertUpdateRotationAction: 1
   speed: 3
-  jumpForce: 6
 --- !u!114 &6367864290167004597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11016,7 +11012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 551fad19d9567a340ab46549a739397e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  jumpClip: {fileID: 0}
 --- !u!82 &7441449176109915127
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11114,6 +11109,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3147602433386132500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128966248380690333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a020afd37243d14a91ec7dadc15671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCameraHandler
+  updateRotationAction: {fileID: 4731786802728998838, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  rotatePlayerOnHold: 0
+--- !u!114 &6460791851975565545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128966248380690333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a61e81da39e134b8e6526c53c7671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerJump
+  jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  jumpForce: 6
 --- !u!1 &8148638769163569118
 GameObject:
   m_ObjectHideFlags: 0

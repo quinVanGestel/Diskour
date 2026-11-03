@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerSound : MonoBehaviour
 {
     private AudioSource audioSource;
+    public AudioSource AudioSource { get => audioSource; }
 
     private void Awake()
     {
