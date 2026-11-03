@@ -2476,6 +2476,14 @@ PrefabInstance:
       propertyPath: nextSceneId
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7473275989299496570, guid: befb3c9301701d0429df788fe6597e04, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473275989299496570, guid: befb3c9301701d0429df788fe6597e04, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8817817860740119933, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: m_Mesh
       value: 

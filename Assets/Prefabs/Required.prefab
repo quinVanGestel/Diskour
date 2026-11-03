@@ -173,6 +173,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QDebugManager
   warnIfUnableToFindLogLevel: 0
   categoryLogLevels: []
+--- !u!1 &1503771786910507563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476380227253636851}
+  - component: {fileID: 3289619520742593754}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &476380227253636851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503771786910507563}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1373810216886998632}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3289619520742593754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503771786910507563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f08d9c16e6863b40bbad0a447cddb5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  boundsUpper: {x: 100, y: 100, z: 100}
+  boundsLower: {x: -100, y: -40, z: -100}
 --- !u!1 &2720777011118094459
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,6 +1019,7 @@ Transform:
   - {fileID: 3849949808784515868}
   - {fileID: 3742781813918556055}
   - {fileID: 917448010907785529}
+  - {fileID: 476380227253636851}
   m_Father: {fileID: 6855022334480351973}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2082432899974559038
@@ -1186,6 +1233,14 @@ PrefabInstance:
     - target: {fileID: 7101188113990466784, guid: 60ec0799eb1a2214cabbc6156337a0d0, type: 3}
       propertyPath: m_VersionIndex
       value: 4576
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975415778512218645, guid: 60ec0799eb1a2214cabbc6156337a0d0, type: 3}
+      propertyPath: actions.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7403835598989086092}
+    - target: {fileID: 7975415778512218645, guid: 60ec0799eb1a2214cabbc6156337a0d0, type: 3}
+      propertyPath: actions.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
