@@ -864,22 +864,22 @@ MonoBehaviour:
       Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-        Gain: 5
+        Gain: 32
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
-        AccelTime: 0.2
+        AccelTime: 0.1
         DecelTime: 0.2
     - Name: Look Orbit Y
       Owner: {fileID: 3083662591221816221}
       Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-        Gain: -5
+        Gain: -16
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
-        AccelTime: 0.2
+        AccelTime: 0.1
         DecelTime: 0.2
     - Name: Orbit Scale
       Owner: {fileID: 3083662591221816221}
@@ -1072,15 +1072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4128932282036776844, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
       propertyPath: m_VersionIndex
-      value: 1288
-      objectReference: {fileID: 0}
-    - target: {fileID: 5953215564328618416, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
-      propertyPath: playerCamera
-      value: 
-      objectReference: {fileID: 8213204323095881748}
-    - target: {fileID: 5953215564328618416, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
-      propertyPath: invertUpdateRotationAction
-      value: 0
+      value: 1294
       objectReference: {fileID: 0}
     - target: {fileID: 8128966248380690333, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
       propertyPath: m_Name

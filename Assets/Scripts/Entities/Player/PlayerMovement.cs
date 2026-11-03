@@ -27,8 +27,8 @@ public class PlayerMovement : MonoBehaviour
     {
         HandlePlayerMovement();
 
-        transform.rotation = CalculatePlayerRotation();
-        // QDebugManager.Instance.Trace(this, "pressed: " + jumpAction.action.IsPressed());
+        CameraHandlerEntryPoint();
+        QDebugManager.Instance.Trace(this, "pressed: " + jumpAction.action.IsPressed());
         if (jumpAction.action.IsPressed())
         {
             if (AbleToJump())
@@ -36,6 +36,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void CameraHandlerEntryPoint()
+    {
+        transform.rotation = CalculatePlayerRotation();
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     public bool AbleToJump()
     {

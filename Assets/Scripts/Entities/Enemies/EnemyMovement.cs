@@ -25,10 +25,12 @@ public class EnemyMovement : MonoBehaviour
 
     private void TryUpdateNavMeshDestination()
     {
-        if (enemyPathfinding.PlayerLocation != null)
+        if (!enemyPathfinding.PlayerLocationKnown)
         {
-            navMeshAgent.destination = enemyPathfinding.PlayerLocation;
+            return;
         }
+
+        navMeshAgent.destination = enemyPathfinding.PlayerLocation;
     }
 
 }

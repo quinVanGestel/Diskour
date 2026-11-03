@@ -71,6 +71,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -206,6 +207,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -341,6 +343,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -566,6 +569,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -701,6 +705,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -836,6 +841,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -971,6 +977,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -1106,6 +1113,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -1241,6 +1249,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -1376,6 +1385,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -1511,6 +1521,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -1646,6 +1657,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -1781,6 +1793,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -1916,6 +1929,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -2051,6 +2065,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -2186,6 +2201,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -2742,7 +2758,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1057
+  m_VersionIndex: 1291
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3039,6 +3055,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -3174,6 +3191,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -3309,6 +3327,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -3534,6 +3553,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -3669,6 +3689,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -3804,6 +3825,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -3939,6 +3961,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -4074,6 +4097,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -4209,6 +4233,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -4344,6 +4369,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -4479,6 +4505,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -4614,6 +4641,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -4749,6 +4777,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -4884,6 +4913,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -5019,6 +5049,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -5154,6 +5185,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -5289,6 +5321,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -5424,6 +5457,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -5559,6 +5593,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -5694,6 +5729,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -5829,6 +5865,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -5964,6 +6001,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -6099,6 +6137,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -6234,6 +6273,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -6369,6 +6409,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -6504,6 +6545,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -6639,6 +6681,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -6774,6 +6817,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -6909,6 +6953,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -7044,6 +7089,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -7179,6 +7225,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -7314,6 +7361,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -7449,6 +7497,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -7584,6 +7633,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -7719,6 +7769,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -7854,6 +7905,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -7989,6 +8041,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -8124,6 +8177,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -8259,6 +8313,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -8394,6 +8449,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -8529,6 +8585,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -8664,6 +8721,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -8799,6 +8857,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -8967,6 +9026,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -9102,6 +9162,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -9237,6 +9298,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -9372,6 +9434,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -9507,6 +9570,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -9642,6 +9706,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -9777,6 +9842,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -9912,6 +9978,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -10047,6 +10114,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -10182,6 +10250,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -10317,6 +10386,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -10452,6 +10522,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -10587,6 +10658,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -10782,8 +10854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6e2765af0052840881b96088f1069e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  spawnAnchor: {fileID: 0}
-  debugLog: 1
 --- !u!114 &5953215564328618416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10798,11 +10868,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   verticalState: {fileID: 6367864290167004597}
   rigidBody: {fileID: 4855044869627460480}
-  playerCamera: {fileID: 0}
   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   updateRotationAction: {fileID: 4731786802728998838, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  invertUpdateRotationAction: 0
+  invertUpdateRotationAction: 1
   speed: 3
   jumpForce: 6
 --- !u!114 &6367864290167004597
@@ -10817,7 +10886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7511d433d70bb84f883ef784182512b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VerticalState
-  rigidBody: {fileID: 4855044869627460480}
   groundDetectorsParent: {fileID: 1650029082684934074}
   groundDetectors:
   - {fileID: 3107199485928783593}
@@ -11005,6 +11073,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -11140,6 +11209,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -11275,6 +11345,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -11410,6 +11481,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -11578,6 +11650,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -11713,6 +11786,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -11848,6 +11922,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -11983,6 +12058,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -12118,6 +12194,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -12253,6 +12330,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -12388,6 +12466,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -12523,6 +12602,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
@@ -12658,6 +12738,7 @@ MonoBehaviour:
   targetDetectedLastCheck: 0
   timeSinceLastCheck: 0
   timeSinceDisabled: 0
+  detectionEnabled: 1
   maxDistance: 0.2
   direction: {x: 0, y: -1, z: 0}
   targetLayers:
