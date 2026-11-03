@@ -1,8 +1,7 @@
 using Unity.Cinemachine;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMovement))]
-
+[RequireComponent(typeof(PlayerHorizontalMovement), typeof(PlayerCameraHandler), typeof(PlayerJump))]
 public class Player : Entity, IProduct, ISpikeAble
 {
     public string ProductName { get => name; set => gameObject.name = value; }
@@ -52,7 +51,7 @@ public class Player : Entity, IProduct, ISpikeAble
             QDebugManager.Instance.Important(this, "failed to destroy rigidbody.");
         }
 
-        PlayerMovement playerMovement = GetComponent<PlayerMovement>();
+        PlayerHorizontalMovement playerMovement = GetComponent<PlayerHorizontalMovement>();
         if (playerMovement != null)
         {
             Destroy(playerMovement);
