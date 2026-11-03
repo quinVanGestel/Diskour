@@ -1,3 +1,4 @@
+using System;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -40,8 +41,11 @@ public class GameState : MonoBehaviour
         {
             playerReference = value;
             cinemachineCamera.Target.TrackingTarget = playerReference.transform;
+            onPlayerReferenceChange.Invoke();
         }
     }
+
+    public Action onPlayerReferenceChange;
 
     [SerializeField] private Camera playerCamera;
     public Camera PlayerCamera { get => playerCamera; set => playerCamera = value; }

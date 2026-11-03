@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(VerticalState), typeof(Rigidbody))]
@@ -9,6 +11,7 @@ class PlayerJump : MonoBehaviour
     private VerticalState verticalState;
     public float jumpForce;
 
+    public Action onJump;
 
     private void Awake()
     {
@@ -23,13 +26,15 @@ class PlayerJump : MonoBehaviour
 
     private void Update()
     {
+        JumpHandlerEntryPoint();
+    }
+
+    private void JumpHandlerEntryPoint()
+    {
         QDebugManager.Instance.Trace(this, "pressed: " + jumpAction.action.IsPressed());
-        if (jumpAction.action.IsPressed())
+        if (jumpAction.action.IsPressed() && AbleToJump())
         {
-            if (AbleToJump())
-            {
-                Jump();
-            }
+            Jump();
         }
     }
 
@@ -45,5 +50,8 @@ class PlayerJump : MonoBehaviour
     {
         QDebugManager.Instance.Mild(this, "Jumping");
         rigidbody.linearVelocity = new(0f, jumpForce, 0f);
+
+        // Debug.Log(onJump.GetInvocationList().Length);
+        onJump();
     }
 }

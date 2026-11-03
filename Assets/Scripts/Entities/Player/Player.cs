@@ -7,13 +7,14 @@ public class Player : Entity, IProduct, ISpikeAble
 {
     public string ProductName { get => name; set => gameObject.name = value; }
 
+    #region dependencies
     private Rigidbody rigidbody;
     private PlayerHorizontalMovement playerMovement;
     private VerticalState verticalState;
     private PlayerCameraHandler playerCameraHandler;
     private PlayerJump playerJump;
     private PlayerSound playerSound;
-
+    #endregion
 
     private void Start()
     {

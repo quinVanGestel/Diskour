@@ -197,5 +197,13 @@ public static class QTools
         return requestedMeshRenderers.ToArray();
     }
 
+    public static void SingletonSetup<T>(ref T caller, ref T instance) where T : Component
+    {
+        if (instance != null && instance.Equals(instance))
+        {
+            GameObject.Destroy(caller);
+            return;
+        }
+        instance = caller;
+    }
 }
-

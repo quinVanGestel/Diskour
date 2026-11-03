@@ -14,24 +14,8 @@ public class PlayerSound : MonoBehaviour
         FetchDependencies();
     }
 
-    private void Update()
-    {
-        TriggerJumpSound();
-    }
-
     private void FetchDependencies()
     {
         audioSource = GetComponent<AudioSource>();
     }
-
-
-    public void TriggerJumpSound()
-    {
-        if (audioSource.isPlaying)
-        {
-            return;
-        }
-        audioSource.Play();
-    }
-
 }

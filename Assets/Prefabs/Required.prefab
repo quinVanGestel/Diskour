@@ -172,7 +172,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QDebugManager
   warnIfUnableToFindLogLevel: 0
-  categoryLogLevels: []
+  categoryLogLevels:
+  - categoryName: Devtools
+    logLevel: 3
+    typeNames:
+    - QDebugManager
+    - DebugVisualiser
 --- !u!1 &1503771786910507563
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,6 +713,50 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!1 &3737889856319858556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 760201413653462492}
+  - component: {fileID: 4375558218068757288}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &760201413653462492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3737889856319858556}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.08177, y: -10, z: 2.9985}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1373810216886998632}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4375558218068757288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3737889856319858556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6320523fe52c874896c3f9c84ef6cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
 --- !u!1 &3860773055496073368
 GameObject:
   m_ObjectHideFlags: 0
@@ -22037,6 +22086,7 @@ Transform:
   - {fileID: 3742781813918556055}
   - {fileID: 917448010907785529}
   - {fileID: 476380227253636851}
+  - {fileID: 760201413653462492}
   m_Father: {fileID: 6855022334480351973}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1734850119610403023
@@ -22231,21 +22281,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3290753659860313387, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128932282036776844, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4128932282036776844, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
       propertyPath: m_VersionIndex
       value: 1297
-      objectReference: {fileID: 0}
-    - target: {fileID: 7402060782387824707, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8128966248380690333, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
       propertyPath: m_Name
