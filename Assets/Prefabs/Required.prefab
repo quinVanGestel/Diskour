@@ -22231,9 +22231,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3290753659860313387, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128932282036776844, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4128932282036776844, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
       propertyPath: m_VersionIndex
-      value: 1294
+      value: 1297
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402060782387824707, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8128966248380690333, guid: cc1d60a3668c9e341b7f48f4619afe4c, type: 3}
       propertyPath: m_Name
