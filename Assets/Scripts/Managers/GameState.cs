@@ -18,8 +18,19 @@ public class GameState : MonoBehaviour
     }
     #endregion
 
-
     private CinemachineCamera cinemachineCamera;
+
+
+    private PlayerSpawnpoint playerSpawnpoint;
+    public PlayerSpawnpoint PlayerSpawnpoint { get => playerSpawnpoint; }
+    public Transform PlayerSpawnAnchor { get => playerSpawnpoint.transform; }
+
+
+    [Header("Readonly")]
+    [Tooltip("Readonly. Technically you can alter but dont expect not to break things >:(")]
+
+    [SerializeField] private int iterationCount;
+    public int IterationCount { get => iterationCount; set => iterationCount = value; }
 
     [SerializeField] private Player playerReference;
     public Player PlayerReference
@@ -35,11 +46,6 @@ public class GameState : MonoBehaviour
     [SerializeField] private Camera playerCamera;
     public Camera PlayerCamera { get => playerCamera; set => playerCamera = value; }
 
-    [SerializeField] private Transform playerSpawnAnchor;
-    public Transform PlayerSpawnAnchor { get => playerSpawnAnchor; set => playerSpawnAnchor = value; }
-
-    private int iterationCount;
-    public int IterationCount { get => iterationCount; set => iterationCount = value; }
 
     private void Awake()
     {
@@ -50,6 +56,7 @@ public class GameState : MonoBehaviour
     private void FetchDependencies()
     {
         cinemachineCamera = FindAnyObjectByType<CinemachineCamera>();
+        playerSpawnpoint = FindAnyObjectByType<PlayerSpawnpoint>();
     }
 
 }

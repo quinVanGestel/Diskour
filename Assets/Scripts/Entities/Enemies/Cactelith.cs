@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyPathfinding))]
+[RequireComponent(typeof(EnemyMovement))]
 public class Cactelith : Entity
 {
     // stub :D
