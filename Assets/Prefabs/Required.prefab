@@ -302,13 +302,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DebugVisualiser
   debugVisualisations:
   - material: {fileID: 2100000, guid: 87fb59d36cb113b419f5c536a3c14ab9, type: 2}
-    enabled: 1
+    enabled: 0
     meshRenderers: []
   - material: {fileID: 2100000, guid: 0240668e502957848ba7a9dc07c3cee8, type: 2}
-    enabled: 1
+    enabled: 0
     meshRenderers: []
   - material: {fileID: 2100000, guid: 1137d14b862cdae48bdedc9c0b1dd3d7, type: 2}
-    enabled: 1
+    enabled: 0
     meshRenderers: []
   refreshRate: 5
 --- !u!1 &2921976483151665675

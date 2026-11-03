@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 179122651}
     - target: {fileID: 1608452923370426687, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: m_VersionIndex
-      value: 4615
+      value: 4624
       objectReference: {fileID: 0}
     - target: {fileID: 2714161738862828210, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: m_Mesh
@@ -149,11 +149,31 @@ PrefabInstance:
       objectReference: {fileID: 1466464175}
     - target: {fileID: 2714161738862828210, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: m_VersionIndex
-      value: 1192
+      value: 1201
       objectReference: {fileID: 0}
     - target: {fileID: 2720777011118094459, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: m_Name
       value: Required
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994608606020626742, guid: befb3c9301701d0429df788fe6597e04, type: 3}
+      propertyPath: m_ControllerManager.Controllers.Array.data[0].Input.Gain
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994608606020626742, guid: befb3c9301701d0429df788fe6597e04, type: 3}
+      propertyPath: m_ControllerManager.Controllers.Array.data[1].Input.Gain
+      value: -16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994608606020626742, guid: befb3c9301701d0429df788fe6597e04, type: 3}
+      propertyPath: m_ControllerManager.Controllers.Array.data[0].Driver.AccelTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994608606020626742, guid: befb3c9301701d0429df788fe6597e04, type: 3}
+      propertyPath: m_ControllerManager.Controllers.Array.data[0].Driver.DecelTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994608606020626742, guid: befb3c9301701d0429df788fe6597e04, type: 3}
+      propertyPath: m_ControllerManager.Controllers.Array.data[1].Driver.AccelTime
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3552586617549721621, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: m_Mesh
@@ -177,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 67822814}
     - target: {fileID: 5338290009020120185, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: m_VersionIndex
-      value: 4606
+      value: 4615
       objectReference: {fileID: 0}
     - target: {fileID: 5725262453001257123, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
