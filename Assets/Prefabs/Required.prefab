@@ -757,6 +757,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6320523fe52c874896c3f9c84ef6cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  jumpSound: {fileID: 8300000, guid: 3b624d09d7bc8f647973e7e3de61c882, type: 3}
+  deathSound: {fileID: 8300000, guid: 1bd59d6d0bdca99469b43c5d572186d3, type: 3}
+  victorySound: {fileID: 8300000, guid: 25d0f555599006e4b98b8ab0836dcd44, type: 3}
 --- !u!1 &3860773055496073368
 GameObject:
   m_ObjectHideFlags: 0
@@ -22036,6 +22039,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7403835598989086092}
         m_TargetAssemblyTypeName: QSceneManager, Assembly-CSharp
         m_MethodName: EndScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4375558218068757288}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: TriggerVictorySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

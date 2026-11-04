@@ -40204,7 +40204,7 @@ PrefabInstance:
       objectReference: {fileID: 272954204}
     - target: {fileID: 1608452923370426687, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: m_VersionIndex
-      value: 4621
+      value: 4651
       objectReference: {fileID: 0}
     - target: {fileID: 2714161738862828210, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: m_Mesh
@@ -40212,7 +40212,7 @@ PrefabInstance:
       objectReference: {fileID: 607451121}
     - target: {fileID: 2714161738862828210, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: m_VersionIndex
-      value: 1333
+      value: 1363
       objectReference: {fileID: 0}
     - target: {fileID: 2720777011118094459, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: m_Name
@@ -40226,13 +40226,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4375558218068757288, guid: befb3c9301701d0429df788fe6597e04, type: 3}
+      propertyPath: soundCategories.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5338290009020120185, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1834674575}
     - target: {fileID: 5338290009020120185, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: m_VersionIndex
-      value: 4747
+      value: 4777
       objectReference: {fileID: 0}
     - target: {fileID: 5839576908549946592, guid: befb3c9301701d0429df788fe6597e04, type: 3}
       propertyPath: m_Mesh

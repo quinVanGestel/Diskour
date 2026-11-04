@@ -1,3 +1,4 @@
+using System;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -15,6 +16,8 @@ public class Player : Entity, IProduct, ISpikeAble
     private PlayerJump playerJump;
     private PlayerSound playerSound;
     #endregion
+
+    public Action onDeath;
 
     private void Start()
     {
@@ -46,6 +49,7 @@ public class Player : Entity, IProduct, ISpikeAble
             return;
         }
         base.Kill();
+        onDeath();
         RemoveSoul();
         Respawn();
     }
