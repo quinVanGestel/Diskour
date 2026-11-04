@@ -2,9 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-/// <summary>
-/// WIP
-/// </summary>
+
+
+
 class SoundManager : MonoBehaviour
 {
 
@@ -22,6 +22,40 @@ class SoundManager : MonoBehaviour
         instance = this;
     }
     #endregion
+
+    [Serializable]
+    private class SoundCategory
+    {
+        // [SerializeField] private [] triggerActions;
+        [SerializeField] private AudioClip[] audioClips;
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private bool shuffleIfAllPlayed;
+        [SerializeField] private bool placePlayedSoundAtEndOfQueue;
+        [SerializeField] private bool playAllConsecutively;
+
+        private AudioClip[] currentQueue;
+        private AudioClip[] secondaryQueue;
+        private int amountToPlay;
+
+
+        public void AddTriggerActionsListeners()
+        {
+        }
+
+        private void TriggerActionTriggered()
+        {
+            if (playAllConsecutively)
+            {
+                secondaryQueue.CopyTo(currentQueue, 0);
+            }
+
+        }
+
+
+    }
+
+    [SerializeField] private SoundCategory soundCategories;
+
 
     private PlayerJump playerJumpReference;
     private PlayerSound playerSoundReference;
