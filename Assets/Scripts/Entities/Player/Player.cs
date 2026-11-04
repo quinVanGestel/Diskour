@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerSound))]
 public class Player : Entity, IProduct, ISpikeAble
 {
-    public string ProductName { get => name; set => gameObject.name = value; }
+    // public string ProductName { get => name; set => gameObject.name = value; }
 
     #region dependencies
     private Rigidbody rigidbody;
@@ -15,6 +15,7 @@ public class Player : Entity, IProduct, ISpikeAble
     private PlayerCameraHandler playerCameraHandler;
     private PlayerJump playerJump;
     private PlayerSound playerSound;
+    // public GameObject GameObjectReference { get => gameObject; }
     #endregion
 
     public Action onDeath;

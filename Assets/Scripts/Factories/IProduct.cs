@@ -3,6 +3,7 @@ using UnityEngine;
 
 public interface IProduct
 {
-    public string ProductName { get; set; }
-    public void Initialize();
+    // public string ProductName { get; set; }
+    public abstract void Initialize();
+    // public abstract GameObject GameObjectReference { get; }
 }

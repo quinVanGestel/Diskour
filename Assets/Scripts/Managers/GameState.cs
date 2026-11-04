@@ -48,7 +48,7 @@ public class GameState : MonoBehaviour
     public Action onPlayerReferenceChange;
 
     [SerializeField] private Camera playerCamera;
-    public Camera PlayerCamera { get => playerCamera; set => playerCamera = value; }
+    public Camera PlayerCamera { get => playerCamera; }
 
 
     private void Awake()
