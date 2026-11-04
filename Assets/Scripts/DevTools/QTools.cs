@@ -207,4 +207,22 @@ public static class QTools
         instance = caller;
     }
 
+    // Alteration of https://discussions.unity.com/t/random-shuffle-array/443149/4
+    public static T[] shuffleArray<T>(T[] array)
+    {
+        T[] arrayCopy = new T[array.Length];    // To make sure we don't accidentally alter the paramater's array
+        array.CopyTo(arrayCopy, 0);
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            T itemHolder = array[i];
+            int randomInt = UnityEngine.Random.Range(i, array.Length);
+            arrayCopy[i] = arrayCopy[randomInt];
+            arrayCopy[randomInt] = itemHolder;
+        }
+
+        return arrayCopy;
+    }
+
+
 }
