@@ -11369,22 +11369,22 @@ MonoBehaviour:
       Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-        Gain: 8
+        Gain: 4
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
-        AccelTime: 0.1
+        AccelTime: 0.2
         DecelTime: 0.2
     - Name: Look Orbit Y
       Owner: {fileID: 3083662591221816221}
       Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-        Gain: -4
+        Gain: -2
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
-        AccelTime: 0.1
+        AccelTime: 0.2
         DecelTime: 0.2
     - Name: Orbit Scale
       Owner: {fileID: 3083662591221816221}
