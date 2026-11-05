@@ -1,9 +1,12 @@
-interface ISpikeAble
+interface IKillable
 {
     public abstract void Kill();
 }
 
-interface IStayInBounds
+interface ISpikeAble : IKillable
 {
-    public abstract void Kill();
+}
+
+interface IStayInBounds : IKillable
+{
 }
