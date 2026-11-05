@@ -22,10 +22,9 @@ public class DebugVisualiser : MonoBehaviour
     [SerializeField] private float refreshRate;
     private float timeSinceRefresh;
 
-    private void Start()
+    private void Awake()
     {
         SingletonSetup();
-        FetchMeshRendererReferences();
     }
 
     private void Update()
