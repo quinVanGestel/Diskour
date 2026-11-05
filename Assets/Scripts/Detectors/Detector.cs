@@ -78,39 +78,39 @@ public abstract class Detector : MonoBehaviour
 
     public virtual bool GameObjectPassesFilter(GameObject otherGameObject)
     {
-        if (tagsAllowed.Length != 0 && !QTools.AnyStringMatches(new string[] { otherGameObject.tag }, tagsAllowed))
+        if (tagsAllowed.Length != 0 && !QTools.anyStringMatches(new string[] { otherGameObject.tag }, tagsAllowed))
         {
             QDebugManager.Instance.Verbose(this, "Rejected " + otherGameObject.name + ", its tag is not explicitly allowed.");
             return false;
         }
 
-        if (tagsBanned.Length != 0 && QTools.AnyStringMatches(new string[] { otherGameObject.tag }, tagsBanned))
+        if (tagsBanned.Length != 0 && QTools.anyStringMatches(new string[] { otherGameObject.tag }, tagsBanned))
         {
             QDebugManager.Instance.Verbose(this, "Rejected " + otherGameObject.name + ", its tag is banned.");
             return false;
         }
 
-        if (namesAllowed.Length != 0 && !QTools.AnyStringMatches(new string[] { otherGameObject.name }, namesAllowed))
+        if (namesAllowed.Length != 0 && !QTools.anyStringMatches(new string[] { otherGameObject.name }, namesAllowed))
         {
             QDebugManager.Instance.Verbose(this, "Rejected " + otherGameObject.name + ", its name is not explicitly allowed.");
             return false;
         }
 
-        if (namesBanned.Length != 0 && QTools.AnyStringMatches(new string[] { otherGameObject.name }, namesBanned))
+        if (namesBanned.Length != 0 && QTools.anyStringMatches(new string[] { otherGameObject.name }, namesBanned))
         {
             QDebugManager.Instance.Verbose(this, "Rejected " + otherGameObject.name + ", its name is banned.");
             return false;
         }
 
         // QDebugManager.Trace(this, componentWhitelist[0].name);
-        if (componentWhitelist.Length != 0 && !QTools.AnyMonoBehaviourMatches(otherGameObject.GetComponents<Component>(), componentWhitelist))
+        if (componentWhitelist.Length != 0 && !QTools.anyMonoBehaviourMatches(otherGameObject.GetComponents<Component>(), componentWhitelist))
         {
             QDebugManager.Instance.Verbose(this, "Rejected " + otherGameObject.name + ", none of its components are explicitly allowed..");
             return false;
         }
 
         // QDebugManager.Trace(this, componentBlacklist[0].name);
-        if (componentBlacklist.Length != 0 && QTools.AnyMonoBehaviourMatches(otherGameObject.GetComponents<Component>(), componentBlacklist))
+        if (componentBlacklist.Length != 0 && QTools.anyMonoBehaviourMatches(otherGameObject.GetComponents<Component>(), componentBlacklist))
         {
             QDebugManager.Instance.Verbose(this, "Rejected " + otherGameObject.name + ", one of its components is banned.");
             return false;

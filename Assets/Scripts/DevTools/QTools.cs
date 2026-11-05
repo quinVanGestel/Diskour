@@ -6,7 +6,7 @@ public static class QTools
 {
 
     /// <returns>Returns the array index of the item if it can be found in the array. Returns -1 otherwise.</returns>
-    public static int FindIndex<T>(T item, T[] array)
+    public static int findIndex<T>(T item, T[] array)
     {
         for (int i = 0; i < array.Length; i++)
         {
@@ -19,7 +19,7 @@ public static class QTools
     /// <summary>
     /// Compares each number in array one to each number in array two. Finds the pair between which the distance is the largest. Returns that distance.
     /// </summary>
-    public static float DistanceLargest(float[] numbersArrayOne, float[] numbersArrayTwo)
+    public static float distanceLargest(float[] numbersArrayOne, float[] numbersArrayTwo)
     {
         float largestDistanceSoFar = numbersArrayOne[0];
         foreach (float i in numbersArrayOne)
@@ -39,7 +39,7 @@ public static class QTools
     /// <summary>
     /// Compares each number in array one to each number in array two. Finds the pair between which the distance is the smallest. Returns that distance.
     /// </summary>
-    public static float DistanceSmallest(float[] numbersArrayOne, float[] numbersArrayTwo)
+    public static float distanceSmallest(float[] numbersArrayOne, float[] numbersArrayTwo)
     {
         float smallestDistanceSoFar = numbersArrayOne[0];
         foreach (float i in numbersArrayOne)
@@ -59,7 +59,7 @@ public static class QTools
     /// <summary>
     /// Returns all children of the given gameobject, looks only one layer deep.
     /// </summary>
-    public static GameObject[] GetAllChildren(GameObject parent)
+    public static GameObject[] getAllChildren(GameObject parent)
     {
         List<GameObject> children = new();
         foreach (Transform child in parent.transform)
@@ -74,7 +74,7 @@ public static class QTools
     /// <summary>
     /// Returns a component of the requested type from the gameobject siblings of the given gameobject.
     /// </summary>
-    public static T GetComponentInSiblings<T>(GameObject gameObject)
+    public static T getComponentInSiblings<T>(GameObject gameObject)
     {
         return gameObject.transform.parent.gameObject.GetComponentInChildren<T>();
     }
@@ -82,7 +82,7 @@ public static class QTools
     /// <summary>
     /// Returns all components of the requested type from the gameobject siblings of the given gameobject.
     /// </summary>
-    public static T[] GetComponentsInSiblings<T>(GameObject gameObject)
+    public static T[] getComponentsInSiblings<T>(GameObject gameObject)
     {
         return gameObject.transform.parent.gameObject.GetComponentsInChildren<T>();
     }
@@ -124,7 +124,7 @@ public static class QTools
 
 
     /// <returns>Either -1 or 1</returns>
-    public static int RandomDirection1D()
+    public static int randomDirection1D()
     {
         if (UnityEngine.Random.Range(0, 2) == 1) return 1;
         else return -1;
@@ -133,7 +133,7 @@ public static class QTools
     //A beautiful function I definitely did not steal :3
     /// <param name="target">Mean of the distribution</param>
     /// <param name="standardDeviation">Standard deviation controls the spread of values</param>
-    public static float GenerateRandomNumberNearTarget(float target, float minInclusive, float maxInclusive, float standardDeviation)
+    public static float generateRandomNumberNearTarget(float target, float minInclusive, float maxInclusive, float standardDeviation)
     {
         System.Random random = new();
         float mean = target;
@@ -145,7 +145,7 @@ public static class QTools
         return generatedNumber;
     }
 
-    public static bool AnyStringMatches(string[] primaryStrings, string[] secondaryStrings)
+    public static bool anyStringMatches(string[] primaryStrings, string[] secondaryStrings)
     {
         foreach (string primaryString in primaryStrings)
         {
@@ -160,7 +160,7 @@ public static class QTools
         return false;
     }
 
-    public static bool AnyMonoBehaviourMatches(Component[] primaryArray, Component[] secondaryArray)
+    public static bool anyMonoBehaviourMatches(Component[] primaryArray, Component[] secondaryArray)
     {
         foreach (Component primaryItem in primaryArray)
         {
@@ -179,7 +179,7 @@ public static class QTools
     }
 
     /// <returns>All the mesh renderers in the hierarchy that have this material.</returns>
-    public static MeshRenderer[] GetAllMeshRenderers(Material requestedMaterial)
+    public static MeshRenderer[] getAllMeshRenderers(Material requestedMaterial)
     {
         MeshRenderer[] allMeshRenderers = GameObject.FindObjectsByType<MeshRenderer>();
         List<MeshRenderer> requestedMeshRenderers = new();
@@ -197,7 +197,7 @@ public static class QTools
         return requestedMeshRenderers.ToArray();
     }
 
-    public static void SingletonSetup<T>(ref T caller, ref T instance) where T : Component
+    public static void singletonSetup<T>(ref T caller, ref T instance) where T : Component
     {
         if (instance != null && instance.Equals(instance))
         {
